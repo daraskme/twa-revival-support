@@ -1,0 +1,16 @@
+name: 質問・相談 / Question / Вопрос
+description: 遊び方やその他の相談 / Ask for help / Задать вопрос
+title: "[Question] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        投稿は公開されます。アカウントについては最初に相談の要件だけを記載し、IDや認証情報は書かないでください。
+        Posts are public. For account support, state only the request; do not include IDs or credentials.
+        Сообщение публично. По вопросам аккаунта укажите только суть запроса, без ID и данных для входа.
+  - type: textarea
+    id: question
+    attributes:
+      label: 相談内容 / Question / Вопрос
+    validations:
+      required: true

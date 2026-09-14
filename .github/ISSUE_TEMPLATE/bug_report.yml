@@ -1,0 +1,31 @@
+name: 不具合 / Bug report / Ошибка
+description: 動作の問題を報告 / Report a problem / Сообщить об ошибке
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        投稿は公開されます。秘密情報・アカウントID・未加工のログは記載しないでください。
+        Posts are public. Do not include secrets, account IDs or raw logs.
+        Сообщение публично. Не указывайте секретные данные, ID аккаунта и необработанные журналы.
+  - type: input
+    id: version
+    attributes:
+      label: クライアントの版 / Client version / Версия клиента
+      description: 分からなければ「不明」で構いません / Unknown is OK.
+  - type: dropdown
+    id: language
+    attributes:
+      label: ゲームの言語 / Game language / Язык игры
+      options:
+        - 日本語
+        - English
+        - Русский
+        - 不明 / Unknown
+  - type: textarea
+    id: problem
+    attributes:
+      label: 症状と操作 / Problem and steps / Проблема и действия
+      description: 期待した動作と実際の動作を教えてください / Describe expected and actual behavior.
+    validations:
+      required: true
