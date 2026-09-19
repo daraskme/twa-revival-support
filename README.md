@@ -4,6 +4,7 @@ TWA Revivalの公開問い合わせ窓口です。daraskが個人で運営して
 
 - [プロジェクトの案内](https://darask.me/twa/)
 - [プライバシーについて](https://darask.me/twa/privacy/)
+- [ランチャーのソースコード（配布中のものと同一・検証スクリプト付き）](https://github.com/daraskme/twa-revival-launcher)
 - [問い合わせを作成](https://github.com/daraskme/twa-revival-support/issues/new/choose)
 
 一般プレイヤー向けの配布は準備中です。このリポジトリは問い合わせ用で、ゲームやランチャーの配布場所ではありません。
@@ -20,10 +21,14 @@ TWA Revivalの公開問い合わせ窓口です。daraskが個人で運営して
 
 Public support for TWA Revival, operated by darask as an individual. General distribution is being prepared. Open an issue for a bug report or question; a GitHub account is required to post. Japanese, English and Russian are welcome.
 
+The launcher's source code, byte-identical to the download and with a verification script: https://github.com/daraskme/twa-revival-launcher
+
 All issues are public. Do not post passwords, authentication codes, tokens, email addresses, account IDs or raw logs. For account-related requests, initially state only that you need account support. Account verification and deletion procedures are being prepared before general release.
 
 ## Русский
 
 Открытая поддержка TWA Revival. Проектом занимается darask как частное лицо. Общедоступная версия готовится к выпуску. Для сообщения об ошибке или вопроса создайте issue; для публикации нужна учётная запись GitHub. Можно писать на японском, английском или русском языке.
+
+Исходный код лаунчера, идентичный загружаемой версии, со скриптом проверки: https://github.com/daraskme/twa-revival-launcher
 
 Все обращения публичны. Не публикуйте пароли, коды подтверждения, токены, адреса электронной почты, идентификаторы аккаунтов и необработанные журналы. По вопросам аккаунта сначала укажите только, что нужна помощь с аккаунтом. Процедуры подтверждения владельца и удаления данных готовятся к общему запуску.
