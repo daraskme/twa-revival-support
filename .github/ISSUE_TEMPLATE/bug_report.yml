@@ -22,6 +22,19 @@ body:
         - English
         - Русский
         - 不明 / Unknown
+  - type: input
+    id: environment
+    attributes:
+      label: Windows・GPU / Windows and GPU / Windows и видеокарта
+  - type: input
+    id: occurred_at
+    attributes:
+      label: 発生日時・タイムゾーン / Time and time zone / Время и часовой пояс
+  - type: textarea
+    id: match_context
+    attributes:
+      label: 対戦・起動状況 / Match or launch context / Матч или запуск
+      description: ソロ・パーティ人数、モード、マップ、待機時間、エラー文・ポート番号 / Solo or party size, mode, map, wait time, error and port / Размер группы, режим, карта, время ожидания, ошибка и порт.
   - type: textarea
     id: problem
     attributes:
