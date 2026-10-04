@@ -6,6 +6,9 @@ TWA Revivalの公開問い合わせ窓口です。daraskが個人で開発・運
 - [プライバシーについて](https://darask.me/twa/privacy/)
 - [問い合わせの案内](https://darask.me/twa/support/)
 - [ランチャーの公開ソースとバージョン別の検証手順](https://github.com/daraskme/twa-revival-launcher)
+- [Discordコミュニティ / Discord community / Сообщество Discord](https://discord.gg/w9vnpAJ7ET)
+- [サーバーソース / Server source / Исходный код сервера](https://github.com/daraskme/twa-revival-server)
+- [原作・現在のデータ比較 / Data comparison / Сравнение данных](https://darask.me/twa/source/)
 - [問い合わせを作成](https://github.com/daraskme/twa-revival-support/issues/new/choose)
 
 プレイヤー向けランチャーは配布中です。このリポジトリでは問い合わせを受け付けます。ランチャーの公開ソースは特定バージョンのスナップショットです。READMEの配信版・QA版の区別と検証対象バージョンを確認してください。
