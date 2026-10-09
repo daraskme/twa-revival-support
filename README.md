@@ -11,7 +11,7 @@ TWA Revivalの公開問い合わせ窓口です。daraskが個人で開発・運
 - [原作・現在のデータ比較 / Data comparison / Сравнение данных](https://darask.me/twa/source/)
 - [問い合わせを作成](https://github.com/daraskme/twa-revival-support/issues/new/choose)
 
-プレイヤー向けランチャーは配布中です。このリポジトリでは問い合わせを受け付けます。ランチャーの公開ソースは特定バージョンのスナップショットです。READMEの配信版・QA版の区別と検証対象バージョンを確認してください。
+**メンテナンス中：新規ログイン・マッチングを停止しています。再開日時は未定です。** [現在の進捗・次回更新の確認範囲（日本語・English・Русский）](STATUS.md)。ランチャーは引き続きダウンロードできます。このリポジトリでは問い合わせを受け付けます。ランチャーの公開ソースは特定バージョンのスナップショットです。READMEの配信版・QA版の区別と検証対象バージョンを確認してください。
 
 ## 日本語
 
@@ -30,6 +30,8 @@ TWA Revivalの公開問い合わせ窓口です。daraskが個人で開発・運
 
 ## English
 
+**Maintenance: new sign-ins and matchmaking are paused. No reopening date is set.** See [current progress and remaining release checks](STATUS.md#english).
+
 Public support for TWA Revival, developed and operated by darask as an individual. The player launcher is available through the project website. The source repository documents a specific release snapshot and distinguishes production from ongoing QA; it does not promise that every branch matches the latest download.
 
 Open an issue for a bug report or gameplay question. A GitHub account is required to post. Japanese, English and Russian are welcome. Include, where known:
@@ -44,6 +46,8 @@ Open an issue for a bug report or gameplay question. A GitHub account is require
 For account access, correction or deletion requests, initially say only that you need account support. The operator will explain identity verification and the scope of the request. A public post or player name alone does not verify ownership. We cannot delete your Epic account.
 
 ## Русский
+
+**Техническое обслуживание: новый вход и подбор матчей приостановлены. Дата возобновления не назначена.** См. [ход работ и оставшиеся проверки](STATUS.md#русский).
 
 Открытая поддержка TWA Revival. Проект разрабатывает и поддерживает darask как частное лицо. Лаунчер для игроков доступен на сайте проекта. В репозитории исходного кода указана конкретная версия; опубликованный выпуск и изменения на проверке обозначены отдельно. Не каждая ветка соответствует последней загрузке.
 
@@ -62,4 +66,4 @@ For account access, correction or deletion requests, initially say only that you
 
 TWA Revival is an unofficial community project, not an official service of Creative Assembly, SEGA or Epic Games.
 
-Updated: 2026-10-05.
+Updated: 2026-10-09.
