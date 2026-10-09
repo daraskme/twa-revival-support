@@ -1,80 +1,45 @@
 # Service and update status / 運用・更新状況 / Состояние сервиса
 
-Updated: **2026-10-09 JST**. [Project](https://darask.me/twa/) · [Support](README.md) · [Launcher source](https://github.com/daraskme/twa-revival-launcher) · [Server source](https://github.com/daraskme/twa-revival-server)
+Updated: **2026-10-09 20:10 JST**. [Project](https://darask.me/twa/) · [Support](README.md) · [Launcher source](https://github.com/daraskme/twa-revival-launcher) · [Server source](https://github.com/daraskme/twa-revival-server)
 
 ## 日本語
 
-**10月9日19時台の検証状況:** 既定・固定スキルを含む構成記録、試合開始時の固定、戦績・サイト分析のコードを候補へ統合しました。実機では、同じユニットの「所有スキル」と各編成枠の「実際の選択」を混同する不一致を発見し修正。関連67件とWindows229件の検査が成功し、修正後の読み取りでも3部隊の異なる選択を照合できました。署名済みQA0.2.68の実試合・サーバー保存・サイト表示の全体受入は継続中です。以下は各段階の記録です。本番配信と受付再開は行っていません。
+**メンテナンスを継続しています。新規ログイン・マッチングの受付再開日は未定です。** 進行中の試合の中継は継続する運用です。10月9日の[公開状態](https://staging-api.darask.me/health)確認では受付停止・終了時刻なしでした。[公開安定版](https://downloads.darask.me/launcher-manifests/stable.json)は0.2.43です。この資料更新はゲーム配信・受付再開ではありません。
 
-**メンテナンスを継続しています。新規ログインとマッチングを停止しており、再開日時は未定です。** 進行中の試合の中継を継続する方針で、既存中継は停止していません。10月9日の[公開health](https://staging-api.darask.me/health)でメンテナンスON・終了時刻なしを確認しました。
+未配信候補QA0.2.68と更新済みQAサーバーで、RTX 5060 Ti 16GBの実戦から戦績・使用率まで確認できました。同じゲーム起動中に通常PvPを2戦完走し、後半の試合では3部隊の9スキル（既定スキルと選択したスキル）、各部隊の消耗品、ツリーの振り方を開始時から終了時まで保存。本人と公開の戦績が一致し、構成を記録していない旧試合はスキル使用率の母数へ混ぜていません。
 
-公開ランチャーのstableは**0.2.43**です（10月9日の[配信一覧](https://downloads.darask.me/launcher-manifests/stable.json)確認）。検証環境の最終配信は0.2.63。GitHubの旧0.2.48 QAブランチと、現在の内部統合候補は別のものです。この資料更新でゲームの新版を配信したり、受付を再開したりしていません。
+実QAデータをサイトへ読み込む表示検査では、日本語・英語・ロシア語の詳細と4種類の集計を確認しました。これは取得済みAPI応答を使った表示検査で、本番サイトとEpicログインの最終受入は残っています。発動回数は未取得で、選択・持ち込み数とは区別します。
 
-次回更新に向けて取り組んでいる内容:
+通常・プレミアムの武器と防具の能力値効果はすべて無効です。中国版の未改変スキル・消耗品・ツリー値と全317ユニットのT10相当基礎値を保持しています。現候補のサーバー1,022件とWindows229件の自動検査が成功しました。所有スキルと部隊ごとの選択を混同する問題も修正済みです。
 
-- マッチング、起動・終了、Private部屋、結果保存の不具合を修正し、どの段階で失敗したか分かる診断ログを追加。
-- 中国版の未改変原本を基準に、スキル・消耗品・アビリティツリーの数値と配分ポイントを確認し、全ユニットをT10相当に統一。
-- 戦績と試合時のツリー配分・スキル・消耗品を保存し、サイトで条件を絞って使用状況を分析できるようにする。
-- BAN/Kick・期間付き停止と監査機能を検証。
+**全不具合の受入と本番配信は未完了です。** 全ユニット、複数クライアント・Private部屋、切断・長時間稼働、設定保持、BAN/Kick、RTX PRO 6000での実戦などを引き続き検証します。QA配信一覧は0.2.63のままで、0.2.68は署名付き候補を検証VMへ適用しています。GitHubの旧QAブランチも現在の内部候補とは別です。
 
-RTX 5060 Ti 16GBのWindows VMで、QA0.2.63に最小修正を加えた通常PvPを1戦完走し、結果画面・格納庫復帰・戦績増加を確認しました。前回固定候補のWindows315件とbackend1015件の自動検査も成功しています。**既定スキルを含む試合時構成の採取、全ユニット、2クライアントの結果・再戦、最終署名パッケージとサイトを含む全体受入は未完了です。** すべての不具合が直ったとはまだ判断していません。
-
-10月9日の追加修正では、戦績の通信停止・ページ切替の競合・再試行・認証切れ後の表示と、同時更新でダウンロード一時ファイルが衝突する問題を対処しました。更新処理の回帰52件、Windows実機の追加2件、戦績の通信4件・画面6ケースを検証済みです。これらは未配信候補の検証で、全体受入完了ではありません。
-
-追加検証では、スキル交換の再起動保持と実戦発動を確認し、通常PvPの完走確認が累計2戦になりました。今回の勝利も戦績へ保存・配達されています。別PCでWindows追加回帰92件、最新のサーバー修正全体で1,020件と型検査が成功しました。試合結果の復旧、Private試合の再取得・期限処理、集計の欠測扱いと重複消耗品を修正し、不変の待機状態を書き直す処理も削減しました。承認済みのOpus5.5追加レビューは完了しています。これらも未配信で、試合時構成の記録と全件受入は引き続き作業中です。
-
-通常・プレミアムの武器・防具は、能力値への効果をすべて無効にする仕様へ候補を修正しました。T10相当の基礎値と、中国版原本のスキル・消耗品・ツリー値は保持します。装備効果9,741行と全317ユニットの基礎値をデータで照合し、Windowsの追加検査126件が失敗・エラー・スキップなしで成功しました。短縮パス表記で起動準備が拒否される問題も修正しました。QA0.2.65の署名済み候補を検証用VMへオフライン適用し、ファイル一致を確認済みです。ゲーム内の最終受入と本番配信は未完了です。
-
-QA0.2.65の実機では、通常防具の変更後も基礎集計値が変わらず、同じ部隊・消耗品で通常武器を往復変更しても攻撃の詳細値が一致しました。消耗品補正は維持されています。読み取り専用の検査で3部隊のスキルを12回安定取得し、中央部隊だけの交換と、各部隊の既定スキルを識別できました。固定スキルを含む画面との照合も実施済みです。これは代表的な格納庫検査で、試合開始時の記録・戦績・サイトへの製品統合はまだ完了していません。
-
-未観測のスキルを「使用率0%」にはしません。明示的に保存された選択と、実際の装備・戦闘中の発動は区別します。新しい分析機能は未公開です。
-
-不具合報告は[問い合わせ](https://github.com/daraskme/twa-revival-support/issues/new/choose)へ。版、日時・タイムゾーン、GPU、モード、再現手順、画面のエラー文を記載してください。パスワード・トークン・アカウントID・未加工ログは公開しないでください。
+[不具合報告](https://github.com/daraskme/twa-revival-support/issues/new/choose)には版、日時・タイムゾーン、GPU、モード、再現手順、画面のエラー文を添えてください。パスワード・トークン・アカウントID・未加工ログは公開しないでください。
 
 ## English
 
-**October 9, around 19:00 JST:** Candidate code now integrates default/fixed skill capture, freezing the build at match entry, match history and website analytics. Live QA exposed a mismatch between owned skills and the actual selection of each deployed copy of a unit. The fix passed 67 related tests and 229 Windows tests; read-only checks also verified the three different live selections. End-to-end acceptance of signed QA0.2.68, server persistence and website display remains in progress. The entries below describe earlier stages. Production has not been released or reopened.
+**Maintenance continues. New sign-ins and matchmaking remain closed, with no reopening date.** Relays for matches already in progress remain available. The October 9 [health check](https://staging-api.darask.me/health) reported maintenance without an end time. The [public stable launcher](https://downloads.darask.me/launcher-manifests/stable.json) remains 0.2.43. This documentation update does not release the game or reopen admission.
 
-**Maintenance remains enabled. New sign-ins and matchmaking are unavailable; there is no reopening date yet.** Existing battle relays have been left running so matches already in progress can continue. The [public health response](https://staging-api.darask.me/health) on October 9 reported maintenance enabled with no end time.
+Unreleased QA0.2.68 and the updated QA backend passed a representative real-match history check on an RTX 5060 Ti 16GB Windows VM. Two normal PvP matches completed in one game process. The later match retained all nine equipped skills across three units, including defaults and explicit selections, consumables per unit and tree allocations from entry through settlement. Self and public history agreed. Older matches without complete skill records were excluded from the skill-usage denominator.
 
-The public stable launcher remains **0.2.43**, checked against its [manifest](https://downloads.darask.me/launcher-manifests/stable.json) on October 9. The last deployed QA launcher is 0.2.63. The older public 0.2.48 QA branch is a separate snapshot, not the current integrated candidate. This documentation update does not release a new game build or reopen admission.
+Captured real QA API responses also passed Japanese, English and Russian website checks for match details and all four usage categories. This was a frozen-response display test; final production-site and Epic-login acceptance remain pending. Activation counts are not collected and are distinct from equipped selections.
 
-Work for the next update covers matchmaking, launch/exit, private-room and result-persistence fixes; diagnostics that identify the failing stage; original Chinese skill, consumable and ability-tree values and point budgets with T10-equivalent units; match-time build history and website filters/statistics; and auditable ban, kick and timed-suspension controls.
+All normal and premium weapon/armour stat effects are disabled. Original Chinese skill, consumable and tree values and T10-equivalent baselines for all 317 units are preserved. The current candidate passed 1,022 backend tests and 229 Windows tests, including the fix separating owned skills from each deployed unit's actual selection.
 
-One normal PvP match completed on an RTX 5060 Ti 16GB Windows VM using QA0.2.63 plus a minimal patch. Result screens, return to the hangar and the career increment were verified. The previous frozen candidate passed 315 Windows tests and 1,015 backend tests. **Complete equipped-skill capture, all-unit acceptance, both clients' results/rematches, and acceptance of the final signed package and website remain unfinished.** This does not establish that every reported problem is fixed.
+**Full issue acceptance and production release are unfinished.** Remaining checks include all units, multiple clients/private rooms, disconnects, sustained play, settings retention, ban/kick and RTX PRO 6000 gameplay. The cloud QA launcher manifest remains 0.2.63; signed 0.2.68 was applied to the test VM. Older public QA branches are separate snapshots.
 
-Additional October 9 fixes address stalled history requests, overlapping page/detail loads, retries, stale displays after authentication expiry, and concurrent updaters colliding on a download temporary file. Validation includes 52 updater regression tests, 2 additional Windows VM cases, 4 history timeout tests and 6 browser recovery/authentication cases. These changes remain unreleased and do not establish full candidate acceptance.
-
-Further QA verified skill replacement across a clean restart and activation in battle; two normal PvP matches have now completed in the patched QA baseline, with the latest victory saved and delivered. An additional 92 Windows regression tests passed on the other PC. All 1,020 backend tests and type checking passed with the latest fixes for result recovery, private-battle replay and expiry, missing-catalogue aggregation and duplicate consumables. Unchanged matchmaking polls also avoid redundant state and alarm writes. The approved additional Opus5.5 review is complete. These changes remain unreleased; complete match loadout capture and complete acceptance are still in progress.
-
-Stat effects from all normal and premium weapons and armour are disabled in the candidate. Tier-10-equivalent unit base stats and the original Chinese skill, consumable and ability-tree values are preserved. Static checks cover 9,741 equipment rows and all 317 unit baselines. An additional 126 Windows checks passed with no failures, errors or skips, including a fix for launch preparation rejecting a valid short Windows path. Signed QA0.2.65 was installed offline in the test VM and its file hashes verified. Final in-game acceptance and production release remain incomplete.
-
-In the QA0.2.65 VM, changing normal armour preserved the base summary stats. Switching a normal weapon and switching back on the same unit with the same consumables also preserved the detailed attack values and consumable bonuses. A read-only probe obtained 12 stable snapshots of all three units, correctly identifying a replacement on the middle unit and each unit's default skills. Fixed skills were also checked against the native UI. These are representative hangar checks; integration into match-start snapshots, history and the website remains unfinished.
-
-Unobserved skills will not be shown as 0% usage. Saved explicit selections, equipped loadouts and actual activations are different observations. The new analytics features are not public yet.
-
-Use [support](https://github.com/daraskme/twa-revival-support/issues/new/choose) to report a problem. Include version, time/time zone, GPU, mode, reproduction steps and the displayed error. Do not publish passwords, tokens, account IDs or raw logs.
+[Report an issue](https://github.com/daraskme/twa-revival-support/issues/new/choose) with version, time/time zone, GPU, mode, reproduction steps and the displayed error. Do not publish passwords, tokens, account IDs or raw logs.
 
 ## Русский
 
-**9 октября, около 19:00 JST:** В кандидат интегрированы сбор стандартных и несменяемых навыков, фиксация состава при входе в бой, история и аналитика сайта. На реальной VM обнаружено и исправлено смешение владения навыком с фактическим выбором у каждой копии отряда. Пройдены 67 связанных тестов и 229 тестов Windows; чтение игрового состояния также подтвердило разные наборы трёх отрядов. Сквозная приёмка подписанного QA0.2.68, сохранения на сервере и отображения на сайте продолжается. Ниже приведены записи предыдущих этапов. Выпуск в production и возобновление входа не выполнялись.
+**Техническое обслуживание продолжается. Новый вход и подбор матчей закрыты; дата открытия не назначена.** Ретрансляция начатых матчей сохранена. Проверка [состояния сервиса](https://staging-api.darask.me/health) 9 октября подтвердила обслуживание без времени окончания. [Публичный стабильный лаунчер](https://downloads.darask.me/launcher-manifests/stable.json) — 0.2.43. Обновление документации не выпускает игру и не открывает вход.
 
-**Техническое обслуживание продолжается. Новый вход и подбор матчей недоступны; дата возобновления пока не назначена.** Ретрансляция уже начавшихся матчей оставлена включённой, чтобы игроки могли продолжить их. В ответе [публичного API состояния](https://staging-api.darask.me/health) от 9 октября обслуживание включено, время окончания не задано.
+Неопубликованный QA0.2.68 с обновлённым QA-сервером прошёл выборочную проверку истории реального боя на Windows VM с RTX 5060 Ti 16GB. В одном процессе завершены два обычных PvP-матча. Во втором сохранены все девять выбранных навыков трёх отрядов, включая стандартные, расходники каждого отряда и распределение очков дерева — от входа до результата. Личная и публичная история совпали. Старые матчи без полного набора навыков исключены из знаменателя их частоты использования.
 
-Публичная стабильная версия лаунчера — **0.2.43**, по [манифесту](https://downloads.darask.me/launcher-manifests/stable.json), проверенному 9 октября. Последняя установленная в QA версия — 0.2.63. Старая публичная ветка QA0.2.48 — отдельный снимок, а не текущий объединённый кандидат. Обновление документации не выпускает новую сборку игры и не возобновляет приём игроков.
+Сохранённые ответы реального QA API проверены в японском, английском и русском интерфейсах: подробности боя и четыре категории статистики. Это проверка отображения записанных ответов; итоговая проверка публичного сайта и входа Epic ещё предстоит. Число применений навыков не собирается и не заменяется числом выбранных наборов.
 
-Для следующего обновления проверяются исправления подбора матчей, запуска и завершения игры, приватных комнат и сохранения результатов; журналы с указанием этапа ошибки; исходные значения навыков, расходников и дерева способностей китайской версии с силой всех отрядов на уровне T10; история составов на момент боя, фильтры и статистика на сайте; блокировки, исключение из боя и временные ограничения с журналом действий.
+Отключены изменения характеристик от всего обычного и премиального оружия и доспехов. Сохранены исходные китайские значения навыков, расходников и дерева, а также базовые характеристики уровня T10 для всех 317 отрядов. Текущий кандидат прошёл 1022 серверных теста и 229 тестов Windows. Исправлено смешение владения навыком с фактическим выбором каждой копии отряда.
 
-На Windows VM с RTX 5060 Ti 16GB завершён один обычный PvP-матч с QA0.2.63 и минимальным исправлением. Проверены экраны результатов, возврат в ангар и увеличение счётчика боёв. Предыдущий зафиксированный кандидат прошёл 315 тестов Windows и 1015 тестов сервера. **Полный сбор выбранных навыков, проверка всех отрядов, результатов обоих клиентов и повторных боёв, итогового подписанного пакета и сайта ещё не завершены.** Это не означает, что все заявленные ошибки исправлены.
+**Полная приёмка ошибок и выпуск в production не завершены.** Продолжаются проверки всех отрядов, нескольких клиентов и приватных комнат, отключений, длительной игры, сохранения настроек, блокировок и исключений, а также боёв на RTX PRO 6000. Облачный QA-манифест пока содержит 0.2.63; подписанный 0.2.68 установлен в тестовую VM. Старые публичные QA-ветки — отдельные снимки.
 
-Дополнительные исправления от 9 октября устраняют зависание запросов истории, конфликт загрузки списка и подробностей, проблемы повторного запроса, устаревшее отображение после истечения авторизации и конфликт временного файла при одновременном обновлении. Проверены 52 регрессионных теста обновления, 2 дополнительных случая на Windows VM, 4 теста тайм-аута истории и 6 браузерных сценариев восстановления и авторизации. Эти изменения ещё не опубликованы и не означают завершения полной приёмки.
-
-Дополнительная проверка подтвердила сохранение замены навыка после перезапуска и его применение в бою. На исправленной QA-сборке завершено уже два обычных PvP-матча; последняя победа сохранена и доставлена клиенту. На другом ПК пройдены ещё 92 регрессионных теста Windows. Последние исправления прошли все 1020 серверных тестов и проверку типов: восстановление результатов, повторное получение приватного боя и сроки комнаты, неизвестные исторические каталоги и повторные расходники. Убраны лишние записи неизменившейся очереди и таймера. Дополнительное согласованное ревью Opus5.5 завершено. Изменения ещё не опубликованы; полный учёт снаряжения и общая приёмка продолжаются.
-
-В кандидате отключены изменения характеристик от всего обычного и премиального оружия и доспехов. Базовые характеристики отрядов на уровне T10 и исходные китайские значения навыков, расходников и дерева способностей сохранены. Статически проверены 9741 строка снаряжения и 317 отрядов. Дополнительные 126 проверок Windows прошли без ошибок и пропусков, включая исправление отказа запуска из-за короткого пути Windows. Подписанный QA0.2.65 установлен офлайн в тестовую VM; хеши файлов совпадают. Итоговая игровая приёмка и выпуск в production ещё не завершены.
-
-В VM с QA0.2.65 замена обычных доспехов не изменила базовые сводные характеристики. Замена обычного оружия и возврат к прежнему на том же отряде с теми же расходниками сохранили подробные показатели атаки и бонусы расходников. Проверка только для чтения получила 12 стабильных снимков трёх отрядов, различив замену навыка только у среднего отряда и стандартные навыки каждого. Несменяемые навыки также сверены с интерфейсом игры. Это выборочные проверки ангара; интеграция записи на начало боя, истории и сайта ещё не завершена.
-
-Неизвестные навыки не будут показаны как 0% использования. Сохранённый выбор, фактически выбранный набор и применение навыка в бою учитываются отдельно. Новая аналитика пока не опубликована.
-
-Для сообщения об ошибке используйте [поддержку](https://github.com/daraskme/twa-revival-support/issues/new/choose). Укажите версию, время и часовой пояс, видеокарту, режим, шаги воспроизведения и текст ошибки. Не публикуйте пароли, токены, ID аккаунтов и необработанные журналы.
+В [сообщении об ошибке](https://github.com/daraskme/twa-revival-support/issues/new/choose) укажите версию, время и часовой пояс, GPU, режим, шаги и текст ошибки. Не публикуйте пароли, токены, ID аккаунтов и необработанные журналы.
