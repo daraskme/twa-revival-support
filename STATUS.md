@@ -4,6 +4,8 @@ Updated: **2026-10-09 JST**. [Project](https://darask.me/twa/) · [Support](READ
 
 ## 日本語
 
+**10月9日19時台の検証状況:** 既定・固定スキルを含む構成記録、試合開始時の固定、戦績・サイト分析のコードを候補へ統合しました。実機では、同じユニットの「所有スキル」と各編成枠の「実際の選択」を混同する不一致を発見し修正。関連67件とWindows229件の検査が成功し、修正後の読み取りでも3部隊の異なる選択を照合できました。署名済みQA0.2.68の実試合・サーバー保存・サイト表示の全体受入は継続中です。以下は各段階の記録です。本番配信と受付再開は行っていません。
+
 **メンテナンスを継続しています。新規ログインとマッチングを停止しており、再開日時は未定です。** 進行中の試合の中継を継続する方針で、既存中継は停止していません。10月9日の[公開health](https://staging-api.darask.me/health)でメンテナンスON・終了時刻なしを確認しました。
 
 公開ランチャーのstableは**0.2.43**です（10月9日の[配信一覧](https://downloads.darask.me/launcher-manifests/stable.json)確認）。検証環境の最終配信は0.2.63。GitHubの旧0.2.48 QAブランチと、現在の内部統合候補は別のものです。この資料更新でゲームの新版を配信したり、受付を再開したりしていません。
@@ -31,6 +33,8 @@ QA0.2.65の実機では、通常防具の変更後も基礎集計値が変わら
 
 ## English
 
+**October 9, around 19:00 JST:** Candidate code now integrates default/fixed skill capture, freezing the build at match entry, match history and website analytics. Live QA exposed a mismatch between owned skills and the actual selection of each deployed copy of a unit. The fix passed 67 related tests and 229 Windows tests; read-only checks also verified the three different live selections. End-to-end acceptance of signed QA0.2.68, server persistence and website display remains in progress. The entries below describe earlier stages. Production has not been released or reopened.
+
 **Maintenance remains enabled. New sign-ins and matchmaking are unavailable; there is no reopening date yet.** Existing battle relays have been left running so matches already in progress can continue. The [public health response](https://staging-api.darask.me/health) on October 9 reported maintenance enabled with no end time.
 
 The public stable launcher remains **0.2.43**, checked against its [manifest](https://downloads.darask.me/launcher-manifests/stable.json) on October 9. The last deployed QA launcher is 0.2.63. The older public 0.2.48 QA branch is a separate snapshot, not the current integrated candidate. This documentation update does not release a new game build or reopen admission.
@@ -52,6 +56,8 @@ Unobserved skills will not be shown as 0% usage. Saved explicit selections, equi
 Use [support](https://github.com/daraskme/twa-revival-support/issues/new/choose) to report a problem. Include version, time/time zone, GPU, mode, reproduction steps and the displayed error. Do not publish passwords, tokens, account IDs or raw logs.
 
 ## Русский
+
+**9 октября, около 19:00 JST:** В кандидат интегрированы сбор стандартных и несменяемых навыков, фиксация состава при входе в бой, история и аналитика сайта. На реальной VM обнаружено и исправлено смешение владения навыком с фактическим выбором у каждой копии отряда. Пройдены 67 связанных тестов и 229 тестов Windows; чтение игрового состояния также подтвердило разные наборы трёх отрядов. Сквозная приёмка подписанного QA0.2.68, сохранения на сервере и отображения на сайте продолжается. Ниже приведены записи предыдущих этапов. Выпуск в production и возобновление входа не выполнялись.
 
 **Техническое обслуживание продолжается. Новый вход и подбор матчей недоступны; дата возобновления пока не назначена.** Ретрансляция уже начавшихся матчей оставлена включённой, чтобы игроки могли продолжить их. В ответе [публичного API состояния](https://staging-api.darask.me/health) от 9 октября обслуживание включено, время окончания не задано.
 
