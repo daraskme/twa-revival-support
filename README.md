@@ -66,4 +66,4 @@ For account access, correction or deletion requests, initially say only that you
 
 TWA Revival is an unofficial community project, not an official service of Creative Assembly, SEGA or Epic Games.
 
-Updated: 2026-10-09.
+Updated: 2026-10-10.
