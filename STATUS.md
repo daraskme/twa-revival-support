@@ -23,6 +23,8 @@ RTX 5060 Ti 16GBのWindows VMで、QA0.2.63に最小修正を加えた通常PvP�
 
 通常・プレミアムの武器・防具は、能力値への効果をすべて無効にする仕様へ候補を修正しました。T10相当の基礎値と、中国版原本のスキル・消耗品・ツリー値は保持します。装備効果9,741行と全317ユニットの基礎値をデータで照合し、Windowsの追加検査126件が失敗・エラー・スキップなしで成功しました。短縮パス表記で起動準備が拒否される問題も修正しました。QA0.2.65の署名済み候補を検証用VMへオフライン適用し、ファイル一致を確認済みです。ゲーム内の最終受入と本番配信は未完了です。
 
+QA0.2.65の実機では、通常防具の変更後も基礎集計値が変わらず、同じ部隊・消耗品で通常武器を往復変更しても攻撃の詳細値が一致しました。消耗品補正は維持されています。読み取り専用の検査で3部隊のスキルを12回安定取得し、中央部隊だけの交換と、各部隊の既定スキルを識別できました。固定スキルを含む画面との照合も実施済みです。これは代表的な格納庫検査で、試合開始時の記録・戦績・サイトへの製品統合はまだ完了していません。
+
 未観測のスキルを「使用率0%」にはしません。明示的に保存された選択と、実際の装備・戦闘中の発動は区別します。新しい分析機能は未公開です。
 
 不具合報告は[問い合わせ](https://github.com/daraskme/twa-revival-support/issues/new/choose)へ。版、日時・タイムゾーン、GPU、モード、再現手順、画面のエラー文を記載してください。パスワード・トークン・アカウントID・未加工ログは公開しないでください。
@@ -43,6 +45,8 @@ Further QA verified skill replacement across a clean restart and activation in b
 
 Stat effects from all normal and premium weapons and armour are disabled in the candidate. Tier-10-equivalent unit base stats and the original Chinese skill, consumable and ability-tree values are preserved. Static checks cover 9,741 equipment rows and all 317 unit baselines. An additional 126 Windows checks passed with no failures, errors or skips, including a fix for launch preparation rejecting a valid short Windows path. Signed QA0.2.65 was installed offline in the test VM and its file hashes verified. Final in-game acceptance and production release remain incomplete.
 
+In the QA0.2.65 VM, changing normal armour preserved the base summary stats. Switching a normal weapon and switching back on the same unit with the same consumables also preserved the detailed attack values and consumable bonuses. A read-only probe obtained 12 stable snapshots of all three units, correctly identifying a replacement on the middle unit and each unit's default skills. Fixed skills were also checked against the native UI. These are representative hangar checks; integration into match-start snapshots, history and the website remains unfinished.
+
 Unobserved skills will not be shown as 0% usage. Saved explicit selections, equipped loadouts and actual activations are different observations. The new analytics features are not public yet.
 
 Use [support](https://github.com/daraskme/twa-revival-support/issues/new/choose) to report a problem. Include version, time/time zone, GPU, mode, reproduction steps and the displayed error. Do not publish passwords, tokens, account IDs or raw logs.
@@ -62,6 +66,8 @@ Use [support](https://github.com/daraskme/twa-revival-support/issues/new/choose)
 Дополнительная проверка подтвердила сохранение замены навыка после перезапуска и его применение в бою. На исправленной QA-сборке завершено уже два обычных PvP-матча; последняя победа сохранена и доставлена клиенту. На другом ПК пройдены ещё 92 регрессионных теста Windows. Последние исправления прошли все 1020 серверных тестов и проверку типов: восстановление результатов, повторное получение приватного боя и сроки комнаты, неизвестные исторические каталоги и повторные расходники. Убраны лишние записи неизменившейся очереди и таймера. Дополнительное согласованное ревью Opus5.5 завершено. Изменения ещё не опубликованы; полный учёт снаряжения и общая приёмка продолжаются.
 
 В кандидате отключены изменения характеристик от всего обычного и премиального оружия и доспехов. Базовые характеристики отрядов на уровне T10 и исходные китайские значения навыков, расходников и дерева способностей сохранены. Статически проверены 9741 строка снаряжения и 317 отрядов. Дополнительные 126 проверок Windows прошли без ошибок и пропусков, включая исправление отказа запуска из-за короткого пути Windows. Подписанный QA0.2.65 установлен офлайн в тестовую VM; хеши файлов совпадают. Итоговая игровая приёмка и выпуск в production ещё не завершены.
+
+В VM с QA0.2.65 замена обычных доспехов не изменила базовые сводные характеристики. Замена обычного оружия и возврат к прежнему на том же отряде с теми же расходниками сохранили подробные показатели атаки и бонусы расходников. Проверка только для чтения получила 12 стабильных снимков трёх отрядов, различив замену навыка только у среднего отряда и стандартные навыки каждого. Несменяемые навыки также сверены с интерфейсом игры. Это выборочные проверки ангара; интеграция записи на начало боя, истории и сайта ещё не завершена.
 
 Неизвестные навыки не будут показаны как 0% использования. Сохранённый выбор, фактически выбранный набор и применение навыка в бою учитываются отдельно. Новая аналитика пока не опубликована.
 
