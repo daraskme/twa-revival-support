@@ -15,7 +15,7 @@ TWA Revivalの公開問い合わせ窓口です。daraskが個人で開発・運
 
 ## 日本語
 
-復旧5マップ定義、Private拠点戦／殲滅戦の分離、代表構成の戦績保存を確認済みです。QA0.2.97では司令官変更後も全スキル・消耗品・ツリー配分を保存し、通常決着後の本人用／公開戦績まで一致しました。部屋の期限後に結果受け取りが残る別の問題を発見し、修正をQAサーバーへ反映しましたが、実機受入は残っています。全件受入・本番配信・受付再開はまだです。[検証状況](STATUS.md)。
+QA0.2.98の公開殲滅戦Oasisで両者の通常決着・結果受信、全スキル・消耗品・ツリー配分と戦績保存、本人用／公開APIの一致を確認しました。同じ起動中の司令官変更→再受付→キャンセルも単独参加で成功しています。原因別ログを追加したQA0.2.99は両VMへ適用・起動確認済みです。Private経由のプロフィール不一致と期限切れ復帰の残条件、全件受入・本番配信・受付再開は未完了です。[検証状況](STATUS.md)。
 
 不具合や遊び方についてIssuesから連絡できます。閲覧は誰でもできます。投稿にはGitHubアカウントが必要です。日本語・英語・ロシア語に対応しています。
 
@@ -32,7 +32,7 @@ TWA Revivalの公開問い合わせ窓口です。daraskが個人で開発・運
 
 ## English
 
-QA has confirmed five restored map definitions, separate Private Territory/Annihilation entries and representative match/build histories. QA0.2.97 preserved complete skills, consumables and tree allocations after a commander change through normal completion, with matching self/public histories. A separate result-delivery problem after room expiry was found; its fix is installed on the QA server, with live acceptance pending. Full acceptance, production release and reopening remain pending. See [QA status](STATUS.md#english).
+QA0.2.98 completed a normal public Annihilation round on Oasis with both results delivered, complete skills/consumables/tree allocations preserved, and matching self/public histories. A solo commander change, requeue and cancellation also passed without restarting. Signed QA0.2.99 adds cause-specific diagnostics and has been installed and launched on both VMs. The earlier Private-to-public profile mismatch, remaining expiry recovery cases, full acceptance, production release and reopening remain pending. See [QA status](STATUS.md#english).
 
 **Maintenance: new sign-ins and matchmaking are paused. No reopening date is set.** See [current progress and remaining release checks](STATUS.md#english).
 
@@ -51,7 +51,7 @@ For account access, correction or deletion requests, initially say only that you
 
 ## Русский
 
-В QA проверены пять восстановленных определений карт, отдельные пункты Private Territory/Annihilation и история боёв с выбранными составами. QA0.2.97 сохранила все навыки, расходники и распределение дерева после смены командира до обычного завершения; личная и публичная история совпали. Обнаружена отдельная проблема получения результатов после истечения срока комнаты. Исправление установлено на QA-сервере, проверка на реальных клиентах остаётся. Полная приёмка, публичный выпуск и возобновление входа ещё не завершены. См. [состояние QA](STATUS.md#русский).
+В QA0.2.98 обычный публичный бой Annihilation на Oasis завершился у обоих игроков: результаты получены, все навыки, расходники и распределение дерева сохранены, личная и публичная история совпали. Смена командира, повторный одиночный вход в очередь и отмена также прошли без перезапуска. Подписанная QA0.2.99 с уточнением причин ошибок установлена и запущена на обеих VM. Прежнее несоответствие профиля при переходе из Private, оставшиеся случаи возврата после истечения срока, полная приёмка, публичный выпуск и возобновление входа ещё не завершены. См. [состояние QA](STATUS.md#русский).
 
 **Техническое обслуживание: новый вход и подбор матчей приостановлены. Дата возобновления не назначена.** См. [ход работ и оставшиеся проверки](STATUS.md#русский).
 
@@ -72,4 +72,4 @@ For account access, correction or deletion requests, initially say only that you
 
 TWA Revival is an unofficial community project, not an official service of Creative Assembly, SEGA or Epic Games.
 
-Updated: 2026-10-10.
+Updated: 2026-10-11.

@@ -1,10 +1,16 @@
 # Service and update status / 運用・更新状況 / Состояние сервиса
 
-Updated: **2026-10-10 23:57 JST**. [Project](https://darask.me/twa/) · [Support](README.md) · [Launcher source](https://github.com/daraskme/twa-revival-launcher) · [Server source](https://github.com/daraskme/twa-revival-server)
+Updated: **2026-10-11 01:23 JST**. [Project](https://darask.me/twa/) · [Support](README.md) · [Launcher source](https://github.com/daraskme/twa-revival-launcher) · [Server source](https://github.com/daraskme/twa-revival-server)
 
 ## 日本語
 
-**メンテナンス継続中です。新規ログイン・マッチングの再開日は未定で、本番配信はまだ変更していません。** 現在のクライアント検証版はQA0.2.97、QAサーバーは部屋所有情報の修正を反映済みです。クラウドのQA配布マニフェスト0.2.63とは別に、両VMへ署名済み候補を適用しています。最後に正常取得できた公開安定版は0.2.43で、その後の公開状態照会はHTTP 403のため再確認が必要です。
+**メンテナンス継続中です。新規ログイン・マッチングの再開日は未定で、本番配信はまだ変更していません。** 現在のクライアント検証版はQA0.2.99、QAサーバーは部屋所有情報の修正を反映済みです。クラウドのQA配布マニフェスト0.2.63とは別に、両VMへ署名済み候補を適用しています。最後に正常取得できた公開安定版は0.2.43で、その後の公開状態照会はHTTP 403のため再確認が必要です。
+
+QA0.2.98の新規公開殲滅戦Oasisで、両者とも離席扱いなしの通常勝敗と結果画面を確認しました。20参加枠の最終結果は両側で一致し、6部隊のT10・全スキル・消耗品4件・ツリー配分、開始時構成の保持と本人用／公開戦績APIの一致も確認しました。同じプロセスでの司令官変更→再受付→キャンセルは単独参加1条件で成功し、ゲーム側・サーバー側とも待機解除、モード一覧の再操作まで確認済みです。以前のPrivate経由のプロフィール不一致を解消した証明には含めません。
+
+QA0.2.98の旧ロビー表示は、QA環境だけの所有索引修復を前提に、ゲーム再起動後の復帰を確認した範囲です。準備済み部屋への設定再送と、部屋情報を失った同一プロセスでの結果受信、手を加えない期限切れ復旧は未受入です。以前の試合で片方が結果を受信していない残件も維持しています。
+
+QA0.2.99では公開マッチングのプロフィール不一致を、司令官の相違・保存時刻の進み・両方の相違・待機中の保存時刻の逆行に分けて診断に残します。受付条件は維持しています。関連Linux42件・Windows42件に成功し、両VMで署名と151ファイルを照合、起動前チェックとハンガー起動を確認しました。不一致の根本原因や全実機条件が解決済みという意味ではありません。
 
 QA0.2.97では、司令官変更後にスキル記録が欠ける原因を修正しました。関連Linux50件・Windows54件に成功し、片方で司令官を変更した後、両VMでPrivate殲滅戦を通常完走。両者の勝敗、非AFK、6部隊のT10・全スキル・消耗品・ツリー配分、開始時からの構成保持、本人用／公開戦績の一致を確認しました。QA0.2.96のマッチング失敗後のモード選択復旧も、単独参加の初回と再試行で確認済みです。多人数の各役割と、別途発生した公開受付のプロフィール不一致は未受入です。
 
@@ -28,7 +34,13 @@ QA0.2.91ではPrivate選択の保存を修正しました。両ルールで通�
 
 ## English
 
-**Maintenance continues. New sign-ins and matchmaking remain paused, with no reopening date. Production has not been updated.** Both VMs run signed QA0.2.97 with the room-ownership fix installed on the QA server; the cloud QA distribution manifest remains a separate 0.2.63. The last successfully checked public stable launcher was 0.2.43; subsequent status requests returned HTTP 403 and need rechecking.
+**Maintenance continues. New sign-ins and matchmaking remain paused, with no reopening date. Production has not been updated.** Both VMs run signed QA0.2.99 with the room-ownership fix installed on the QA server; the cloud QA distribution manifest remains a separate 0.2.63. The last successfully checked public stable launcher was 0.2.43; subsequent status requests returned HTTP 403 and need rechecking.
+
+A new QA0.2.98 public Annihilation match on Oasis completed normally for both players, without AFK, including the result screens. Both clients agreed on all 20 final participant rows. Six T10 units retained complete skills, four consumables and tree allocations; frozen builds and self/public history APIs matched. One solo commander-change → requeue → cancel sequence also passed in the same process, with both queues idle and the mode menu usable afterward. This does not prove the earlier Private-to-public profile mismatch resolved.
+
+QA0.2.98 restored-room display was verified after restarting the game, with a QA-only ownership-index repair as a prerequisite. Prepared-room settings replay, result delivery after context loss in the same process, and unaided expiry recovery remain unaccepted. The undelivered result on one side of the earlier Private trial remains open.
+
+QA0.2.99 distinguishes commander mismatch, a client timestamp ahead of the saved profile, both mismatches together, and a regressed queued-profile timestamp in diagnostics, while preserving admission rules. Related tests passed on Linux and Windows, 42 each. Both VMs passed signature and 151-file verification, startup checks and a live hangar launch. This is not acceptance of the underlying mismatch cause or all runtime conditions.
 
 QA0.2.97 fixes missing skill capture after a commander selection change. Related coverage passed 50 Linux and 54 Windows tests. Both VMs then completed a normal Private Annihilation match after an actual commander change: matching win/loss results, neither participant AFK, six T10 units with complete skills, consumables and tree allocations, unchanged frozen builds, and matching self/public histories. QA0.2.96 mode-selector recovery after failed matchmaking also passed an initial solo attempt and a retry. Other party roles and the separate public-entry profile mismatch remain unaccepted.
 
@@ -52,7 +64,13 @@ Abnormal invitation cases and room expiry during combat still need acceptance. F
 
 ## Русский
 
-**Техническое обслуживание продолжается. Новый вход и подбор матчей приостановлены; дата возобновления не назначена. Публичный выпуск не изменён.** Обе VM используют подписанный QA0.2.97; на QA-сервере установлено исправление записи владельца комнаты; облачный QA-манифест остаётся отдельной версией 0.2.63. Последняя успешно проверенная публичная стабильная версия — 0.2.43; последующие запросы состояния вернули HTTP 403 и требуют повторной проверки.
+**Техническое обслуживание продолжается. Новый вход и подбор матчей приостановлены; дата возобновления не назначена. Публичный выпуск не изменён.** Обе VM используют подписанный QA0.2.99; на QA-сервере установлено исправление записи владельца комнаты; облачный QA-манифест остаётся отдельной версией 0.2.63. Последняя успешно проверенная публичная стабильная версия — 0.2.43; последующие запросы состояния вернули HTTP 403 и требуют повторной проверки.
+
+Новый публичный бой Annihilation на Oasis в QA0.2.98 завершился обычно у обоих игроков, без AFK, с показом итоговых экранов. Все 20 строк участников совпали у обоих клиентов. Сохранены шесть отрядов T10 со всеми навыками, четыре расходника и распределение дерева; составы после старта не изменились, личный и публичный API совпали. Одна одиночная последовательность «смена командира → повторная очередь → отмена» прошла в том же процессе: обе очереди свободны, меню режимов снова работает. Это не доказывает устранение прежнего несоответствия профиля при переходе из Private.
+
+Отображение восстановленной комнаты в QA0.2.98 проверено после перезапуска игры, при предварительном восстановлении записи владельца только в QA. Повторная отправка настроек подготовленной комнаты, получение результата после потери контекста в том же процессе и восстановление после истечения срока без ручного вмешательства ещё не приняты. Неполученный результат одного участника прежнего Private-боя остаётся открытым.
+
+QA0.2.99 различает в диагностике несовпадение командира, опережение сохранённой отметки времени клиентом, оба несовпадения и уменьшение отметки профиля в очереди. Правила допуска сохранены. Пройдены по 42 связанных теста Linux и Windows. На обеих VM проверены подписи, 151 файл, условия запуска и загрузка ангара. Это не подтверждает устранение первопричины или проверку всех игровых условий.
 
 QA0.2.97 исправляет потерю записи навыков после смены командира. Пройдены 50 тестов Linux и 54 Windows. После реальной смены командира обе VM завершили обычный бой Private Annihilation: победа и поражение согласованы, оба игрока без AFK, сохранены шесть отрядов T10 со всеми навыками, расходниками и распределением дерева. Составы не изменились после старта, личная и публичная история совпали. В QA0.2.96 восстановление выбора режима после ошибки подбора проверено при первом одиночном входе и повторной попытке. Остальные роли группы и отдельное несоответствие профиля при публичном входе ещё не приняты.
 
