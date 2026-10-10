@@ -15,7 +15,7 @@ TWA Revivalの公開問い合わせ窓口です。daraskが個人で開発・運
 
 ## 日本語
 
-2026-10-10のQAでは、復旧した5マップ定義の通常対戦と両者の戦績保存を確認しました。「Private拠点戦」「Private殲滅戦」の二つの入口も実装済みです。QA0.2.88では日本語・ロシア語それぞれの実画面で両ルールの作成・通常退出・切り替えを確認しました。QA0.2.89のAFK経路に加え、QA0.2.90では殲滅戦1試合の自主退出保存、相手の通常勝利、両者の同室復帰まで確認しました。QA0.2.91では両Private選択の再起動保持と、拠点戦の自主退出記録、相手の通常勝利、ハンガー復帰後の選択保持、本人用／公開戦績一致を確認しました。QA0.2.91の両ルールで同室復帰と結果受け取り1回、殲滅戦の両者通常決着と6部隊の完全記録も確認しました。QA0.2.93ではロビー競合時の案内を3言語で実機確認し、元の部屋への復帰・通常退出・別ルールでの新規作成も両方向で確認しました。未配信で、残る確認項目は[運用・更新状況](STATUS.md)に記載しています。
+QAでは、復旧した5マップ定義、Private拠点戦／殲滅戦の二入口、通常対戦の戦績と使用構成保存を確認しています。本陣占領の追加試験では、1,109回の実判定すべてが中国版原本コードの結果と一致しました。一方、Private対戦後の公開マッチング失敗とモード選択不能を新たに確認し、修正・検証を継続中です。診断改善の候補は関連35件をLinuxとWindowsで通過しましたが、稼働中QAへの適用はこれからです。本番は未配信です。[確認済み範囲と残項目](STATUS.md)を参照してください。
 
 不具合や遊び方についてIssuesから連絡できます。閲覧は誰でもできます。投稿にはGitHubアカウントが必要です。日本語・英語・ロシア語に対応しています。
 
@@ -32,7 +32,7 @@ TWA Revivalの公開問い合わせ窓口です。daraskが個人で開発・運
 
 ## English
 
-QA on 2026-10-10 confirmed normal matches and both players’ histories for five restored map definitions. Separate Private Territory and Private Annihilation entries are implemented. QA0.2.88 also verified both room types, normal exit, and rule switching in the live Japanese and Russian clients. In addition to the QA0.2.89 AFK path, QA0.2.90 passed voluntary-quit recording, the opponent’s ordinary victory and both clients returning to the same room in one live Annihilation match. QA0.2.91 also verified restart retention for both Private choices and Territory quit recording, the opponent’s ordinary victory, selection retention on return to the hangar, and matching self/public histories. QA0.2.91 also passed same-room return and once-only result delivery for both rulesets, plus ordinary completion and six complete loadouts in Annihilation. QA0.2.93 also verified conflict guidance in all three languages and recovery through the old room, normal exit and creation under new rules in both directions. These changes are unreleased; outstanding checks are listed in [service status](STATUS.md#english).
+QA has confirmed five restored map definitions, separate Private Territory/Annihilation entries, and normal-match histories with recorded builds. An additional base-capture trial matched all 1,109 live updates against the Chinese-original machine code. Public matchmaking failure and an unresponsive mode selector after a Private match were newly observed and remain under investigation. A diagnostic candidate passed 35 related tests on both Linux and Windows but is not yet installed in the running QA clients. Production is unchanged. See [verified scope and remaining checks](STATUS.md#english).
 
 **Maintenance: new sign-ins and matchmaking are paused. No reopening date is set.** See [current progress and remaining release checks](STATUS.md#english).
 
@@ -51,7 +51,7 @@ For account access, correction or deletion requests, initially say only that you
 
 ## Русский
 
-В QA от 2026-10-10 подтверждены обычные бои и история обоих игроков для пяти восстановленных определений карт. Реализованы отдельные пункты Private Territory и Private Annihilation. В QA0.2.88 также проверены создание обоих типов комнат, обычный выход и смена правил в работающем клиенте на японском и русском языках. Помимо AFK-пути QA0.2.89, в QA0.2.90 подтверждены запись добровольного выхода, обычная победа соперника и возврат обоих клиентов в ту же комнату в одном бою Annihilation. В QA0.2.91 также проверены сохранение обоих Private-режимов после перезапуска и запись выхода, обычная победа соперника, сохранение выбора при возврате в ангар и совпадение личной и публичной истории в Territory. В QA0.2.91 также подтверждены возврат в ту же комнату и однократное получение результата в обоих режимах, обычное завершение Annihilation обоими игроками и запись всех шести отрядов. В QA0.2.93 также проверены сообщение о конфликте на трёх языках и восстановление через прежнюю комнату, обычный выход и создание с новыми правилами в обоих направлениях. Изменения ещё не выпущены; оставшиеся проверки указаны в [состоянии сервиса](STATUS.md#русский).
+В QA проверены пять восстановленных определений карт, отдельные пункты Private Territory/Annihilation, история обычных боёв и запись составов. В дополнительном испытании захвата базы все 1109 игровых шагов совпали с исходным китайским машинным кодом. Обнаружены сбой публичного подбора и неработающий выбор режима после Private-боя; расследование продолжается. Кандидат диагностики прошёл 35 связанных тестов в Linux и Windows, но ещё не установлен в работающие QA-клиенты. Публичный выпуск не изменён. См. [проверенный объём и оставшиеся проверки](STATUS.md#русский).
 
 **Техническое обслуживание: новый вход и подбор матчей приостановлены. Дата возобновления не назначена.** См. [ход работ и оставшиеся проверки](STATUS.md#русский).
 

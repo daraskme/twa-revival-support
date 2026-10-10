@@ -1,10 +1,12 @@
 # Service and update status / 運用・更新状況 / Состояние сервиса
 
-Updated: **2026-10-10 20:24 JST**. [Project](https://darask.me/twa/) · [Support](README.md) · [Launcher source](https://github.com/daraskme/twa-revival-launcher) · [Server source](https://github.com/daraskme/twa-revival-server)
+Updated: **2026-10-10 21:11 JST**. [Project](https://darask.me/twa/) · [Support](README.md) · [Launcher source](https://github.com/daraskme/twa-revival-launcher) · [Server source](https://github.com/daraskme/twa-revival-server)
 
 ## 日本語
 
 **メンテナンス継続中です。新規ログイン・マッチングの再開日は未定で、本番配信はまだ変更していません。** 現在の検証版はQA0.2.93です。クラウドのQA配布マニフェスト0.2.63とは別に、両VMへ署名済み候補を適用しています。最後に正常取得できた公開安定版は0.2.43で、その後の公開状態照会はHTTP 403のため再確認が必要です。
+
+追加QAで、Private対戦後に公開対戦を開始するとハンガーへ戻り、モード選択が反応しなくなる問題を確認しました。まだ修正・実機受入が必要です。拒否理由とHTTP状態を診断へ残す候補修正はLinux35件・実Windows35件を通過しましたが、稼働中のQAクライアントには未適用です。通信断後の退出記録再送試験も未完了です。
 
 今回復旧した5マップ定義は、長坂の拠点戦、ミュカレとヴェスヴィウスの両ルールです。いずれも通常の2人対戦、両者の最終戦績、全6部隊の使用構成、本人用と公開APIの一致、同室への復帰までQAで確認済みです。候補には16地形×2ルールを収録しています。
 
@@ -16,13 +18,15 @@ QA0.2.91ではPrivate選択の保存を修正しました。両ルールで通�
 
 使用構成は既定・固定・選択スキル、消耗品、ツリー配分を含みます。使用率は構成が記録された試合を母数とし、未記録の旧試合と混ぜません。スキルの発動回数は未収集です。サイトの3言語表示は保存済みQA応答で確認しましたが、darask.me上でのEpicログインから絞り込みまでの操作は未受入です。
 
-拠点戦3500点と中国版原本の占領設定をQAへ戻しました。実戦で通常拠点の占領と占領後の90秒ロックを確認済みですが、本陣の占領完了時間を原本と同条件で比較する検証は未完です。317ユニットはT10相当、スキル・消耗品・ツリーは中国版原本の値です。通常・プレミアムを含む武器と防具の能力値効果は無効です。
+拠点戦3500点と中国版原本の占領設定をQAへ戻しました。通常拠点の占領と占領後90秒ロックを実機確認済みです。追加試験では、本陣占領完了までの実入力を原本と候補の実コードへ個別に渡し、1,109回の判定がすべて一致しました。1→2→3部隊と順次到着した条件のゲーム内時間は221.8秒です。独立したコード比較31条件も一致しました。原本クライアントを別起動する対照試験と全実戦条件の確認は未完です。317ユニットはT10相当、スキル・消耗品・ツリーは中国版原本の値です。通常・プレミアムを含む武器と防具の能力値効果は無効です。
 
 全件受入・本番配信は未完です。招待の異常条件や対戦中の期限切れなどは引き続き未受入です。全ユニットの実機能力、3〜4人パーティ、残る切断・取消し・再接続条件、長時間対戦、BAN・Kick、対戦統計、更新やOS・ランチャー異常終了からの復旧、負荷、物理PC再起動、リプレイなどの要望が残っています。短いTCP断から約0.43秒で再接続して対戦を継続できることは確認済みです。GPU QAはRTX5060 Tiで継続し、PRO6000は使用していません。
 
 ## English
 
 **Maintenance continues. New sign-ins and matchmaking remain paused, with no reopening date. Production has not been updated.** Both VMs run signed QA0.2.93; the cloud QA distribution manifest remains a separate 0.2.63. The last successfully checked public stable launcher was 0.2.43; subsequent status requests returned HTTP 403 and need rechecking.
+
+Additional QA found a failure when starting public matchmaking after a Private match: the client returns to the hangar and its mode selector stops responding. A fix and live acceptance are still required. A candidate diagnostic change preserving specific admission reasons and HTTP status passed 35 Linux and 35 actual Windows tests; it is not yet installed in the running QA clients. Live departure retry after a network outage remains untested.
 
 Five restored map definitions—Changban Territory and both rulesets for Mycale and Vesuvius—passed normal two-player matches, both final histories, six complete loadouts, matching self/public APIs, and return to the same room. The candidate contains 16 terrains with two rulesets each.
 
@@ -34,13 +38,15 @@ QA0.2.91 fixes saving the Private selection. Both rulesets retained their select
 
 Snapshots include default, fixed and selected skills, consumables and ability-tree allocations. Usage rates count recorded builds and exclude older matches without that data; skill activation counts are not collected. Three-language site rendering was checked with saved QA responses; live Epic login and filtering on darask.me remain pending.
 
-Territory uses 3500 points and Chinese-original capture settings in QA. Ordinary capture and the 90-second post-capture lock passed live checks; comparing base-capture completion time with an unchanged original under identical conditions is still open. All 317 units use T10-equivalent stats, original skill/consumable/tree values, and disabled weapon/armour effects, including premium equipment.
+Territory uses 3500 points and Chinese-original capture settings in QA. Ordinary capture and the 90-second post-capture lock passed live checks. In an additional base-capture trial, executing the original and candidate machine code separately with each live input matched all 1,109 updates through completion. Capture took 221.8 simulation seconds as one, then two, then three units arrived. Another 31 isolated code-comparison cases matched. A separate untouched-original-client control run and all live conditions remain open. All 317 units use T10-equivalent stats, original skill/consumable/tree values, and disabled weapon/armour effects, including premium equipment.
 
 Abnormal invitation cases and room expiry during combat still need acceptance. Full acceptance and release remain unfinished: all unit abilities, three/four-player parties, remaining disconnect/cancel/reconnect cases, long sessions, bans/kicks, full statistics, update/OS/launcher crash recovery, load, physical-PC reboot and requested features such as replays. A short TCP interruption recovered in about 0.43 seconds with combat continuing. GPU QA uses RTX5060 Ti; PRO6000 is not in use.
 
 ## Русский
 
 **Техническое обслуживание продолжается. Новый вход и подбор матчей приостановлены; дата возобновления не назначена. Публичный выпуск не изменён.** Обе VM используют подписанный QA0.2.93; облачный QA-манифест остаётся отдельной версией 0.2.63. Последняя успешно проверенная публичная стабильная версия — 0.2.43; последующие запросы состояния вернули HTTP 403 и требуют повторной проверки.
+
+Дополнительная QA выявила сбой при запуске публичного подбора после Private-боя: клиент возвращается в ангар, а выбор режима перестаёт реагировать. Исправление и проверка в игре ещё необходимы. Кандидатное изменение диагностики сохраняет конкретную причину отказа и HTTP-статус; пройдены 35 тестов Linux и 35 тестов в настоящей Windows. В работающие QA-клиенты оно ещё не установлено. Повторная отправка записи выхода после обрыва связи в игре ещё не проверена.
 
 Пять восстановленных определений карт — Changban Territory и оба режима Mycale и Vesuvius — прошли обычные бои двух игроков: подтверждены оба итога, составы шести отрядов, совпадение личного и публичного API и возврат в ту же комнату. Кандидат содержит 16 ландшафтов с двумя режимами каждый.
 
@@ -50,7 +56,7 @@ QA0.2.90 добавляет запись добровольного выхода
 
 Снимки включают стандартные, фиксированные и выбранные навыки, расходники и распределение дерева. Доли использования учитывают записанные составы; старые бои без этих данных исключены. Число активаций навыков не собирается. Отображение сайта на трёх языках проверено с сохранёнными QA-ответами; вход Epic и фильтрация на darask.me ещё не приняты.
 
-В QA восстановлены 3500 очков Territory и исходные китайские настройки захвата. В игре проверены обычный захват и блокировка на 90 секунд после него; сравнение полного времени захвата базы с неизменённым оригиналом при одинаковых условиях ещё не выполнено. Все 317 отрядов имеют характеристики уровня T10, исходные значения навыков, расходников и дерева. Эффекты оружия и доспехов, включая премиальные, отключены.
+В QA восстановлены 3500 очков Territory и исходные китайские настройки захвата. Обычный захват и блокировка на 90 секунд проверены в игре. В дополнительном испытании базы исходный и кандидатный машинный код отдельно получили каждый фактический ввод: все 1109 шагов до завершения совпали. При последовательном прибытии одного, двух и трёх отрядов прошло 221,8 секунды игрового времени. Также совпали 31 изолированный случай сравнения кода. Отдельный контрольный запуск неизменённого оригинального клиента и все игровые условия ещё не проверены. Все 317 отрядов имеют характеристики уровня T10, исходные значения навыков, расходников и дерева. Эффекты оружия и доспехов, включая премиальные, отключены.
 
 QA0.2.91 исправляет сохранение выбранного Private-режима. Для обоих режимов подтверждено сохранение выбора после обычного перезапуска. В Territory также подтверждены сохранение выбора после добровольного выхода, запись причины и состава и совпадение личной и публичной истории. Пройдены 29 тестов Linux и три проверки реального JavaScript-кода в Windows. В Territory также подтверждены экран обычной победы соперника, сохранение Private-режима при возврате в ангар и совпадение личной и публичной истории обоих клиентов. Причина выхода и состав не изменились после завершения соперником. В QA0.2.91 Territory также подтверждены возврат в ту же комнату и однократное получение результата после возвращения его владельца. Следующий бой Annihilation оба клиента завершили обычным образом без AFK. Подтверждены шесть полных составов, совпадение личной и публичной истории, возврат в ту же комнату и однократное получение результата каждым игроком после его возвращения. Хозяин сохранил выбор Private Annihilation, а гость, присоединившийся при выбранном Territory, сохранил исходный выбор Private Territory. Комната и бой оставались в режиме Annihilation. В QA0.2.93 на английском, японском и русском проверены конкретное сообщение о конфликте режимов и указания по восстановлению. При конфликте прежняя комната, правила и участники не меняются. Возврат через «Создать игру» в прежнем режиме, обычный выход и создание с новыми правилами проверены в обоих направлениях без перезапуска. Пройдены 146 тестов Linux; один пропущен из-за отсутствующего исторического эталона. В Windows пройдены десять проверок фактического JavaScript-кода.
 
