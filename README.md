@@ -15,6 +15,8 @@ TWA Revivalの公開問い合わせ窓口です。daraskが個人で開発・運
 
 ## 日本語
 
+2026-10-10のQAでは、復旧した5マップ定義の通常対戦と両者の戦績保存を確認しました。「Private拠点戦」「Private殲滅戦」の二つの入口も実装済みです。未配信で、離席時の戦績など残る確認項目は[運用・更新状況](STATUS.md)に記載しています。
+
 不具合や遊び方についてIssuesから連絡できます。閲覧は誰でもできます。投稿にはGitHubアカウントが必要です。日本語・英語・ロシア語に対応しています。
 
 報告には、分かる範囲で次の情報を添えてください。
@@ -29,6 +31,8 @@ TWA Revivalの公開問い合わせ窓口です。daraskが個人で開発・運
 アカウント情報の確認・修正・削除は、最初に「アカウントについて相談したい」とだけ記載してください。運営が本人確認と対応範囲を案内します。公開投稿やプレイヤーネームだけで本人確認は完了しません。Epicアカウント自体の削除は扱いません。
 
 ## English
+
+QA on 2026-10-10 confirmed normal matches and both players’ histories for five restored map definitions. Separate Private Territory and Private Annihilation entries are implemented. These changes are unreleased; AFK results and other outstanding checks are listed in [service status](STATUS.md#english).
 
 **Maintenance: new sign-ins and matchmaking are paused. No reopening date is set.** See [current progress and remaining release checks](STATUS.md#english).
 
@@ -46,6 +50,8 @@ Open an issue for a bug report or gameplay question. A GitHub account is require
 For account access, correction or deletion requests, initially say only that you need account support. The operator will explain identity verification and the scope of the request. A public post or player name alone does not verify ownership. We cannot delete your Epic account.
 
 ## Русский
+
+В QA от 2026-10-10 подтверждены обычные бои и история обоих игроков для пяти восстановленных определений карт. Реализованы отдельные пункты Private Territory и Private Annihilation. Изменения ещё не выпущены; итоги после AFK и остальные проверки указаны в [состоянии сервиса](STATUS.md#русский).
 
 **Техническое обслуживание: новый вход и подбор матчей приостановлены. Дата возобновления не назначена.** См. [ход работ и оставшиеся проверки](STATUS.md#русский).
 
