@@ -15,7 +15,7 @@ TWA Revivalの公開問い合わせ窓口です。daraskが個人で開発・運
 
 ## 日本語
 
-QAでは、復旧した5マップ定義、Private拠点戦／殲滅戦の二入口、通常対戦の戦績と使用構成保存を確認しています。本陣占領の追加試験では、1,109回の実判定すべてが中国版原本コードの結果と一致しました。一方、Private対戦後の公開マッチング失敗とモード選択不能を新たに確認し、修正・検証を継続中です。診断改善の候補は関連35件をLinuxとWindowsで通過しましたが、稼働中QAへの適用はこれからです。本番は未配信です。[確認済み範囲と残項目](STATUS.md)を参照してください。
+復旧5マップ定義、Private拠点戦／殲滅戦の二入口、通常対戦の戦績・使用構成保存、本陣占領の原本コードとの一致は確認済みです。 Private対戦後の公開マッチング失敗とモード選択不能は未解決です。診断修正はLinux・実Windows各35件を通過し、署名付きQA0.2.94を両VMへ適用しました。再起動直後の公開殲滅戦は受付・入場に成功。実際の通信断中に自主退出した記録がPC内に残り、接続復旧後に同じイベントとして再送され、本人用／公開戦績へ反映されることを確認しました。続いて相手が全滅後の観測中にAFKとなり、双方の退出理由と全6部隊のスキル・消耗品・ツリー配分が保持されました。この試合は通常決着の受入には含めません。再起動後の再送と残る条件は未完了です。 本番配信と受付再開はまだです。[検証状況](STATUS.md)。
 
 不具合や遊び方についてIssuesから連絡できます。閲覧は誰でもできます。投稿にはGitHubアカウントが必要です。日本語・英語・ロシア語に対応しています。
 
@@ -32,7 +32,7 @@ QAでは、復旧した5マップ定義、Private拠点戦／殲滅戦の二入�
 
 ## English
 
-QA has confirmed five restored map definitions, separate Private Territory/Annihilation entries, and normal-match histories with recorded builds. An additional base-capture trial matched all 1,109 live updates against the Chinese-original machine code. Public matchmaking failure and an unresponsive mode selector after a Private match were newly observed and remain under investigation. A diagnostic candidate passed 35 related tests on both Linux and Windows but is not yet installed in the running QA clients. Production is unchanged. See [verified scope and remaining checks](STATUS.md#english).
+QA has confirmed five restored map definitions, separate Private Territory/Annihilation entries, recorded normal-match histories/builds and agreement with the original capture code. Public matchmaking failure and a locked mode selector after a Private match remain unresolved. The diagnostic fix passed 35 Linux and 35 actual Windows tests, and signed QA0.2.94 is installed in both VMs. Freshly restarted clients successfully entered public Annihilation. A voluntary exit during a real network outage persisted locally and was retried as the same event after connectivity returned, with matching self/public history. The peer later became AFK during observation after losing all units; both departure reasons and all six units’ skills, consumables and tree allocations were preserved. This trial does not count as ordinary match completion. Retry after restarting and other conditions remain open. Production and admission remain unchanged. See [QA status](STATUS.md#english).
 
 **Maintenance: new sign-ins and matchmaking are paused. No reopening date is set.** See [current progress and remaining release checks](STATUS.md#english).
 
@@ -51,7 +51,7 @@ For account access, correction or deletion requests, initially say only that you
 
 ## Русский
 
-В QA проверены пять восстановленных определений карт, отдельные пункты Private Territory/Annihilation, история обычных боёв и запись составов. В дополнительном испытании захвата базы все 1109 игровых шагов совпали с исходным китайским машинным кодом. Обнаружены сбой публичного подбора и неработающий выбор режима после Private-боя; расследование продолжается. Кандидат диагностики прошёл 35 связанных тестов в Linux и Windows, но ещё не установлен в работающие QA-клиенты. Публичный выпуск не изменён. См. [проверенный объём и оставшиеся проверки](STATUS.md#русский).
+В QA проверены пять восстановленных определений карт, отдельные пункты Private Territory/Annihilation, история и составы обычных боёв и совпадение с исходным кодом захвата. Сбой публичного подбора и блокировка выбора режима после Private-боя остаются нерешёнными. Исправление диагностики прошло по 35 тестов в Linux и реальной Windows; подписанная QA0.2.94 установлена в обе VM. После перезапуска клиенты успешно вошли в публичный Annihilation. Выход во время реального обрыва сети сохранился локально и после восстановления связи был отправлен повторно как то же событие; личная и публичная история совпали. Позже соперник получил AFK во время наблюдения после потери всех отрядов. Обе причины выхода, навыки, расходники и распределение дерева всех шести отрядов сохранились. Этот бой не считается проверкой обычного завершения. Повторная отправка после перезапуска и другие условия ещё не проверены. Публичный выпуск и приём игроков не изменены. См. [состояние QA](STATUS.md#русский).
 
 **Техническое обслуживание: новый вход и подбор матчей приостановлены. Дата возобновления не назначена.** См. [ход работ и оставшиеся проверки](STATUS.md#русский).
 
