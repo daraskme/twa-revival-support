@@ -15,7 +15,7 @@ TWA Revivalの公開問い合わせ窓口です。daraskが個人で開発・運
 
 ## 日本語
 
-QA0.2.108を両VMへ適用し、起動前検査・補助処理の正常起動・ハンガー表示を確認しました。木杭など11定義に残っていた原本T10との差分を修正し、能力カタログと補助処理の旧ハッシュ参照による起動停止2件も解消しました。データ照合12件、更新・中断復旧はLinux／Windows各13件、カタログ間の整合性と旧参照を検出する最終回帰試験12件が成功しています。QAサーバーのカタログ版も更新済みです。設置物の実戦動作・全317ユニットの能力反映・画面欠けの解消は未受入です。設置物の使用率集計や実Epicログインからのサイト操作を含め、未完了は引き続き10分野あり、残試験総数・完了予定日は未確定です。本番配信・受付再開は行っていません。
+配信前QAを見直し、全317ユニット・全組合せの個別実戦を、全件データ照合と既存の実機証拠を使う方式へ変更しました。追加の通常完走はPrivate拠点戦3500点と公開殲滅戦の2試合に絞り、構成保存・戦績・再送・復帰を同時に確認します。制裁、診断、実Epicログインからのサイト操作は短い別確認へ集約します。未修正のマッチング不具合や未実装の設置物採用率などは先に修正し、網羅目的の追加試合は行いません。QA0.2.108の通常終了・再起動とHUD欠けの修正を確認済みです。直近6部隊の全スキル・設置物・凍結構成の保存も確認しましたが、片側退出のため正常2人完走とは扱いません。本番配信・EOS受付再開は行っていません。
 
 QA0.2.105で確認した2人のPrivate殲滅戦、6部隊の全スキル・消耗品・ツリー・Onager木杭の保存、本人／公開戦績一致、通常ロビー復帰の受入は維持しています。通常終了時の一時DLL削除修正もMain 1回・Sub 2回の終了で確認しました。
 
@@ -36,7 +36,7 @@ QA0.2.98の公開殲滅戦Oasisで両者の通常決着・結果受信、全ス�
 
 ## English
 
-Signed QA0.2.108 is installed on both VMs. Startup checks, helper readiness and hangar rendering passed. Eleven deployable definitions, including wooden stakes, were restored to original Chinese T10 data. Two startup failures caused by stale catalogue and helper hash references were corrected. Twelve data checks, 13 update/recovery tests on each of Linux and Windows, and a final set of 12 cross-catalogue and stale-reference regression tests passed. The QA server uses the matching catalogue version. Actual deployable combat behaviour, full runtime coverage of all 317 units and display clipping remain unaccepted. Ten broad areas remain, including deployable usage analytics and live Epic login on the site; the remaining test total and completion date are undetermined. Production release and admission remain unchanged.
+Pre-release QA now reuses complete data checks and existing runtime evidence instead of playing every unit and loadout combination separately. Two additional normal completed matches are planned: Private Territory at 3,500 points and public Annihilation, combining build/history preservation, retry and lobby recovery checks. Moderation, diagnostics and the live Epic-authenticated site flow use short separate checks. Known matchmaking defects and unfinished deployable selection analytics still require fixes first; exhaustive extra matches will not be added. QA0.2.108 normal exit, relaunch and HUD clipping fixes passed. Complete skills, deployables and frozen builds were also recorded for six additional units, but a participant departure prevents counting that trial as a normal two-player completion. Production release and EOS admission remain unchanged.
 
 The accepted QA0.2.105 two-player Private Annihilation trial still covers six complete builds, skills, consumables, tree allocations, Onager stakes, matching self/public histories and normal lobby return. Temporary-DLL cleanup also passed normal exit once on Main and twice on Sub.
 
@@ -59,7 +59,7 @@ For account access, correction or deletion requests, initially say only that you
 
 ## Русский
 
-Подписанный QA0.2.108 установлен на обе VM. Проверены допуск к запуску, готовность вспомогательного процесса и показ ангара. Исправлены 11 определений заграждений, включая деревянные колья: восстановлены исходные китайские данные T10. Устранены две ошибки запуска из-за устаревших хешей каталога и вспомогательного процесса. Пройдены 12 проверок данных, по 13 тестов обновления и восстановления в Linux и Windows и итоговые 12 регрессионных проверок согласованности каталогов и устаревших ссылок. Каталог QA-сервера также обновлён. Работа заграждений в бою, полная проверка всех 317 отрядов и обрезание экрана ещё не приняты. Остаются десять крупных областей, включая статистику выбора заграждений и настоящий вход через Epic на сайте; число оставшихся тестов и дата завершения не определены. Публичный выпуск и приём игроков не изменены.
+Предрелизная проверка теперь использует полную сверку данных и уже собранные результаты вместо отдельных боёв для каждого юнита и сочетания навыков. Запланированы два дополнительных боя с нормальным завершением: приватный бой за точки с 3500 очками и публичное уничтожение. В них объединены проверки сохранения сборок и статистики, повторной отправки и возврата в лобби. Модерация, диагностика и сайт с реальным входом Epic проверяются отдельными короткими действиями. Сначала необходимо исправить известные ошибки подбора и завершить аналитику выбора размещаемых объектов; новые бои только ради полного перебора не добавляются. В QA0.2.108 проверены обычное завершение, повторный запуск и исправление обрезанного интерфейса. Для ещё шести юнитов сохранены все навыки, размещаемые объекты и неизменная сборка, но выход одного участника не позволяет считать этот бой нормальным завершением для двух игроков. Публичный выпуск и приём через EOS не изменены.
 
 Приёмка приватного боя двух игроков в QA0.2.105 сохраняется: шесть полных составов, навыки, расходники, дерево, колья Onager, совпадение личной и публичной истории и обычный возврат в лобби. Очистка временных DLL также проверена при обычном выходе один раз на Main и два раза на Sub.
 
