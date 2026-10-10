@@ -1,8 +1,10 @@
 # Service and update status / 運用・更新状況 / Состояние сервиса
 
-Updated: **2026-10-10 14:04 JST**. [Project](https://darask.me/twa/) · [Support](README.md) · [Launcher source](https://github.com/daraskme/twa-revival-launcher) · [Server source](https://github.com/daraskme/twa-revival-server)
+Updated: **2026-10-10 15:05 JST**. [Project](https://darask.me/twa/) · [Support](README.md) · [Launcher source](https://github.com/daraskme/twa-revival-launcher) · [Server source](https://github.com/daraskme/twa-revival-server)
 
 ## 日本語
+
+QA0.2.88を両VMへ適用しました。日本語・ロシア語の実画面でプライベート拠点戦と殲滅戦の二つの入口を確認し、各言語で両ルールの部屋作成、通常退出、再起動なしのルール切り替えに成功しました。選択したルールとサーバーの保存内容が一致し、各ルール16マップを収録しています。期限切れの部屋では、退出前の準備解除が失敗して退出できない経路も修正しました。関連90件はLinux・Windowsの両方で成功しました。実際の期限切れ後の最終操作確認は残ります。離席戦績の修正・全件受入・本番配信は未完です。
 
 **メンテナンス継続・受付再開日は未定です。今回、本番の配信変更・受付再開は行っていません。** 最後に正常取得できた公開安定版は0.2.43です。最新の公開状態照会はHTTP 403となったため、新しい状態確認が完了したとは扱っていません。
 
@@ -18,13 +20,15 @@ QA0.2.73の2台Private対戦で、双方の入場、正常な勝敗確定、戦�
 
 **拠点戦3500点・中国版原本の占領設定をQAで復元しました。** 未配信QA0.2.74を両VMへ署名付き適用しました。基地の必要占領量を3000、占領後のロックを90秒へ戻し、兵種別占領速度・倍率・ユニットの占領力を含む原本照合を実施しました。2台の実戦で3500点表示、通常拠点の占領、直後の90秒ロックを確認しました。本陣の占領時間と原本との同条件比較は未完です。
 
-追加検証では、離席終了した参加者だけ最終結果が未確定になる問題を再現しました。両者の使用構成と勝利側の戦績は保存済みですが、参加者の結果確定は修正対象として残っています。また、期限切れPrivate部屋から退出できない問題をQA0.2.75で修正し、関連88件のWindows回帰試験、両VMへの適用・起動を確認しました。実際の期限切れ状態からの最終操作確認は残ります。
+追加検証では、離席終了した参加者だけ最終結果が未確定になる問題を再現しました。両者の使用構成と勝利側の戦績は保存済みですが、参加者の結果確定は修正対象として残っています。QA0.2.75では期限切れ部屋のLeave処理を修正しましたが、その前に送られるUnreadyの経路が残っていました。追加修正と未確認範囲は上記QA0.2.88の通りです。
 
 通常・プレミアムの武器と防具の能力値効果は全無効です。317ユニットのT10相当、スキル・消耗品・ツリーの中国版原本値を維持しています。QA0.2.73はWindows統合394件と追加の回帰86件、QA0.2.74の変更箇所はWindows8件・装備等の境界11件・生成器6件・サーバー関連35件が成功しました。試験は重複を含むため合算しません。
 
 **全件受入と本番配信は未完です。** 3〜4人パーティ、切断・取消し・再接続、長時間・連続対戦、AFK退出後の未確定結果、全ユニットと砲兵・象の能力、対戦統計の全項目、更新中断・修復、BAN・Kick、負荷、PC本体再起動後の確認が残っています。リプレイなど残る新機能要望も未完です。クラウドのQA配布マニフェストは0.2.63のままで、VMの署名済み0.2.84とは別です。実機GPU検証はRTX5060 Tiで継続し、PRO6000の検証は保留しています。QA0.2.76はWindows246件、Linux216件、サーバー関連178件と型検査が成功しました。試合開始後のメイン側で再接続表示が残る症状も調査中です。
 
 ## English
+
+QA0.2.88 is installed in both VMs. Live Japanese and Russian screens show separate Private Territory and Private Annihilation entries. In each language, both room types, normal exit, and switching rules without restarting succeeded. The server stored the selected rules correctly; each ruleset offers 16 maps. An additional expired-room path was fixed: cancelling readiness before Leave could fail and trap the player. All 90 related tests passed on both Linux and Windows. Final live exit after actual room expiry remains pending. AFK history fixes, full acceptance, and production release are not complete.
 
 **Maintenance continues; no reopening date is set. No production release or admission change was made.** The last successfully checked public stable launcher was 0.2.43. The latest public status request returned HTTP 403, so a fresh status verification is still pending.
 
@@ -40,11 +44,13 @@ All six deployed units recorded default, fixed and selected skills, consumables 
 
 QA0.2.74 introduced the restoration to **3500 points and Chinese-original capture settings**, including a base capture amount of 3000 and a 90-second post-capture lock. Capture tables, multipliers and unit capture power were compared with the original. The two-client battle verified the 3500-point HUD, an ordinary point takeover and its 90-second lock. Base capture duration and a timed comparison with the untouched original remain unverified. All weapon/armor stat effects remain disabled; T10-equivalent units and original skill, consumable and tree values are retained.
 
-Further QA reproduced a missing final result on the participant that left around AFK handling; both loadouts and the winning side’s result were stored. The participant’s final result remains unresolved. QA0.2.75 fixes leaving an expired idle Private room, passes 88 related Windows regression tests, and is installed and starts in both VMs. Final live expiry/exit acceptance remains pending.
+Further QA reproduced a missing final result on the participant that left around AFK handling; both loadouts and the winning side’s result were stored. The participant’s final result remains unresolved. QA0.2.75 fixed the expired-room Leave handler, but the earlier Unready request still blocked the native sequence. The additional fix and remaining acceptance are described under QA0.2.88 above.
 
 Full acceptance and production release remain pending: three/four-person parties, disconnect/cancel/reconnect, long sessions, AFK result handling, all unit families, full statistics, update interruption/repair, ban/kick, load and host reboot checks. Replay and other outstanding feature requests remain unfinished. The cloud QA download manifest remains 0.2.63; the VMs use an offline signed 0.2.84 candidate. GPU QA continues on the RTX5060 Ti; PRO6000 validation is deferred. QA0.2.76 passed 246 Windows, 216 Linux and 178 relevant server tests plus type checking. A persistent reconnect overlay on the main client after battle entry is also under investigation.
 
 ## Русский
+
+QA0.2.88 установлена в обеих VM. В работающем клиенте на японском и русском языках подтверждены отдельные пункты приватного боя за точки и боя на уничтожение. Для каждого языка проверены создание комнат обоих типов, обычный выход и смена правил без перезапуска. Сервер сохраняет выбранные правила; для каждого режима доступны 16 карт. Исправлен дополнительный путь ошибки при истечении срока комнаты: отмена готовности перед выходом могла блокировать выход. Все 90 связанных тестов пройдены в Linux и Windows. Финальная проверка выхода после реального истечения срока ещё предстоит. Исправление истории после AFK, полная приёмка и выпуск в основной сервис не завершены.
 
 **Техническое обслуживание продолжается; дата открытия не назначена. Выпуск в production и возобновление входа не выполнялись.** Последняя успешно проверенная стабильная версия — 0.2.43. Последний запрос публичного состояния получил HTTP 403; новая проверка пока не завершена.
 
@@ -60,7 +66,7 @@ QA0.2.84 установлен в обеих VM; запуск и обычное �
 
 В QA0.2.74 восстановлены **3500 очков и исходные китайские настройки захвата**: объём захвата базы 3000 и блокировка после захвата 90 секунд. Проверены исходные таблицы, множители и сила захвата отрядов. В бою двух клиентов проверены цель 3500 очков, захват обычной точки и блокировка на 90 секунд. Время полного захвата базы и сравнение с неизменённым оригиналом ещё не проверены. Эффекты всего оружия и доспехов отключены; сохранены характеристики уровня T10 и исходные значения навыков, расходников и дерева.
 
-Дополнительно воспроизведено отсутствие итогового результата у участника после выхода в связи с AFK. Составы обоих игроков и результат победителя сохранены; результат участника остаётся неподтверждённым. QA0.2.75 исправляет выход из Private-комнаты с истёкшим сроком, если бой не начат; 88 связанных Windows-тестов пройдены, версия установлена и запускается в обеих VM. Финальная проверка реального истечения комнаты и выхода ещё не завершена.
+Дополнительно воспроизведено отсутствие итогового результата у участника после выхода в связи с AFK. Составы обоих игроков и результат победителя сохранены; результат участника остаётся неподтверждённым. QA0.2.75 исправила обработчик Leave для комнаты с истёкшим сроком, однако предшествующий запрос Unready всё ещё блокировал выход. Дополнительное исправление и оставшаяся проверка описаны выше для QA0.2.88.
 
 Полная приёмка и выпуск не завершены. Остались группы из трёх/четырёх игроков, разрывы связи и отмены, длительные сессии, результаты после AFK, все типы отрядов, полная статистика, прерывание и восстановление обновлений, блокировки/исключения, нагрузка и перезапуск физических ПК. Реплеи и другие оставшиеся запросы функций ещё не завершены. Облачный QA-манифест остаётся 0.2.63; VM используют отдельно установленный подписанный кандидат 0.2.84. Проверка GPU продолжается на RTX5060 Ti; проверка PRO6000 отложена. Для QA0.2.76 пройдены 246 Windows-тестов, 216 Linux-тестов, 178 связанных серверных тестов и проверка типов. Также исследуется не исчезающее окно переподключения на основном клиенте после входа в бой.
 
