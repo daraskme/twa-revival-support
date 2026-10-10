@@ -1,10 +1,10 @@
 # Service and update status / 運用・更新状況 / Состояние сервиса
 
-Updated: **2026-10-11 04:37 JST**. [Project](https://darask.me/twa/) · [Support](README.md) · [Launcher source](https://github.com/daraskme/twa-revival-launcher) · [Server source](https://github.com/daraskme/twa-revival-server)
+Updated: **2026-10-11 05:35 JST**. [Project](https://darask.me/twa/) · [Support](README.md) · [Launcher source](https://github.com/daraskme/twa-revival-launcher) · [Server source](https://github.com/daraskme/twa-revival-server)
 
 ## 日本語
 
-QA0.2.103を両VMへ署名付き適用し、起動を確認しました。受付拒否案内の表示と、対戦終了後に相手より先にPrivateロビーへ戻る際のエラーを修正しています。関連90件・112件は、それぞれLinux・Windowsで成功しました。ウィンドウ表示の案内は実機単体で自動表示・通常OK・復帰まで確認しましたが、QA0.2.103で実際のマッチングから通す確認は残っています。QA0.2.102の通常対戦では両者の戦績・結果受信と、代表6部隊のT10・全スキル・消耗品・ツリー配分の保存、本人用／公開APIの一致を確認しました。一方、ゲストのロビー復帰では準備済みエラーと、その後の期限切れを観測しました。全件受入・本番配信・受付再開は未完了です。
+QA0.2.103の新しい2人対戦で、両者の通常決着・戦績保存・結果受信、ゲストが先に元ロビーへ戻る操作を確認しました。メインVMでは受付拒否案内→通常退出→公開マッチング再受付・取消しまで成功しました。一方、Onagerの既定設置物により編成全体のスキル記録が欠落する問題を発見しました。スキルと設置物を分けて取得・保存・表示する修正候補QA0.2.104を署名・準備し、読み取り試験はLinux／Windows各30件、サーバー関連35件が成功。RTX5060 Tiの実機でも修正版による3部隊のスキル・木杭の取得を確認しました。まだ独立した検証用コードでの確認で、新候補を組み込んだ対戦、対象8種類の全確認、既定設置物のT10数値照合は残ります。全件受入・本番配信・受付再開は未完了です。
 
 **メンテナンス継続中です。新規ログイン・マッチングの再開日は未定で、本番配信はまだ変更していません。** 現在のクライアント検証版はQA0.2.103、QAサーバーは部屋所有情報の修正を反映済みです。クラウドのQA配布マニフェスト0.2.63とは別に、両VMへ署名済み候補を適用しています。最後に正常取得できた公開安定版は0.2.43で、その後の公開状態照会はHTTP 403のため再確認が必要です。
 
@@ -36,7 +36,7 @@ QA0.2.91ではPrivate選択の保存を修正しました。両ルールで通�
 
 ## English
 
-Signed QA0.2.103 is installed and has launched on both VMs. It addresses refusal-dialog visibility and an error when a completed participant returns to a Private lobby before the owner reopens it. The related suites passed 90 and 112 tests respectively on both Linux and Windows. An isolated real-client check confirmed automatic windowed guidance, normal OK and return to the same game; end-to-end matchmaking acceptance in QA0.2.103 is still pending. A normal QA0.2.102 round verified both saved histories and result deliveries, with all skills, consumables and tree allocations preserved for the six tested T10 unit slots and matching self/public APIs. The guest lobby return encountered a prepared-room error, then a separate expiry on retry. Full acceptance, production release and reopening remain pending.
+A new two-player QA0.2.103 match verified normal results and history delivery for both players, including the guest returning to the lobby first. The main VM also completed refusal guidance, normal exit, public requeue and cancellation. We found that an Onager default deployable caused incomplete skill recording for its entire squad. Signed candidate QA0.2.104 separates skills and deployables in capture, storage and display. Reader suites passed 30 tests each on Linux and Windows, and 35 related server tests passed. An isolated check on the RTX5060 Ti VM captured all three units’ skills and the stakes with the corrected reader. Packaged match acceptance, all eight units with default deployables and default-deployable T10 values still need verification. Full acceptance, production release and reopening remain pending.
 
 **Maintenance continues. New sign-ins and matchmaking remain paused, with no reopening date. Production has not been updated.** Both VMs run signed QA0.2.103 with the room-ownership fix installed on the QA server; the cloud QA distribution manifest remains a separate 0.2.63. The last successfully checked public stable launcher was 0.2.43; subsequent status requests returned HTTP 403 and need rechecking.
 
@@ -68,7 +68,7 @@ Abnormal invitation cases and room expiry during combat still need acceptance. F
 
 ## Русский
 
-Подписанная QA0.2.103 установлена и запущена на обеих VM. Исправляются видимость подсказки при отказе и ошибка возврата завершившего бой участника в Private-лобби до его повторного открытия владельцем. Связанные наборы из 90 и 112 тестов прошли на Linux и Windows. Отдельная проверка на реальном клиенте подтвердила автоматический показ подсказки в оконном режиме, обычное нажатие OK и возврат в ту же игру; сквозная проверка подбора в QA0.2.103 ещё не завершена. Обычный бой QA0.2.102 подтвердил сохранение истории и получение результатов обоими игроками, все навыки, расходники и распределение дерева для шести проверенных слотов T10, а также совпадение личного и публичного API. Возврат гостя встретил ошибку подготовленной комнаты, а повторная попытка — отдельное истечение срока. Полная приёмка, публичный выпуск и возобновление входа остаются незавершёнными.
+Новый бой двух игроков в QA0.2.103 подтвердил обычное завершение, сохранение истории и получение результатов обоими игроками, включая возврат гостя в лобби раньше владельца. На основной VM также проверены подсказка при отказе, обычный выход, повторный вход в публичную очередь и отмена. Обнаружено, что стандартное заграждение Onager приводит к неполной записи навыков всех трёх отрядов игрока. Подписана тестовая сборка QA0.2.104 для раздельного чтения, сохранения и показа навыков и заграждений. Пройдены по 30 тестов чтения на Linux и Windows и 35 серверных тестов. Отдельная проверка на VM с RTX5060 Ti получила навыки всех трёх отрядов и колья. Ещё нужны бой с установленной новой сборкой, проверка всех восьми затронутых определений и значений T10 для стандартных заграждений. Полная приёмка, публичный выпуск и возобновление входа не завершены.
 
 **Техническое обслуживание продолжается. Новый вход и подбор матчей приостановлены; дата возобновления не назначена. Публичный выпуск не изменён.** Обе VM используют подписанный QA0.2.103; на QA-сервере установлено исправление записи владельца комнаты; облачный QA-манифест остаётся отдельной версией 0.2.63. Последняя успешно проверенная публичная стабильная версия — 0.2.43; последующие запросы состояния вернули HTTP 403 и требуют повторной проверки.
 
