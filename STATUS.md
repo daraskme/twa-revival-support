@@ -1,12 +1,12 @@
 # Service and update status / 運用・更新状況 / Состояние сервиса
 
-Updated: **2026-10-11 01:56 JST**. [Project](https://darask.me/twa/) · [Support](README.md) · [Launcher source](https://github.com/daraskme/twa-revival-launcher) · [Server source](https://github.com/daraskme/twa-revival-server)
+Updated: **2026-10-11 04:37 JST**. [Project](https://darask.me/twa/) · [Support](README.md) · [Launcher source](https://github.com/daraskme/twa-revival-launcher) · [Server source](https://github.com/daraskme/twa-revival-server)
 
 ## 日本語
 
-QA0.2.99のPrivate殲滅戦Alpsで、両者の離席なし通常決着、同じ部屋への復帰と結果受信を確認しました。6部隊のT10・全スキル・消耗品・ツリー配分は開始時から不変で、本人用／公開戦績APIも一致しています。試合後の司令官変更も過去の戦績を変えません。通常退出後の公開単独受付とキャンセルは、同じ起動中に成功しました。退出前の受付拒否には画面上の説明改善が必要です。以前のプロフィール不一致、旧試合の未受信、期限切れや部屋情報消失からの復旧は引き続き未受入です。
+QA0.2.103を両VMへ署名付き適用し、起動を確認しました。受付拒否案内の表示と、対戦終了後に相手より先にPrivateロビーへ戻る際のエラーを修正しています。関連90件・112件は、それぞれLinux・Windowsで成功しました。ウィンドウ表示の案内は実機単体で自動表示・通常OK・復帰まで確認しましたが、QA0.2.103で実際のマッチングから通す確認は残っています。QA0.2.102の通常対戦では両者の戦績・結果受信と、代表6部隊のT10・全スキル・消耗品・ツリー配分の保存、本人用／公開APIの一致を確認しました。一方、ゲストのロビー復帰では準備済みエラーと、その後の期限切れを観測しました。全件受入・本番配信・受付再開は未完了です。
 
-**メンテナンス継続中です。新規ログイン・マッチングの再開日は未定で、本番配信はまだ変更していません。** 現在のクライアント検証版はQA0.2.99、QAサーバーは部屋所有情報の修正を反映済みです。クラウドのQA配布マニフェスト0.2.63とは別に、両VMへ署名済み候補を適用しています。最後に正常取得できた公開安定版は0.2.43で、その後の公開状態照会はHTTP 403のため再確認が必要です。
+**メンテナンス継続中です。新規ログイン・マッチングの再開日は未定で、本番配信はまだ変更していません。** 現在のクライアント検証版はQA0.2.103、QAサーバーは部屋所有情報の修正を反映済みです。クラウドのQA配布マニフェスト0.2.63とは別に、両VMへ署名済み候補を適用しています。最後に正常取得できた公開安定版は0.2.43で、その後の公開状態照会はHTTP 403のため再確認が必要です。
 
 QA0.2.98の新規公開殲滅戦Oasisで、両者とも離席扱いなしの通常勝敗と結果画面を確認しました。20参加枠の最終結果は両側で一致し、6部隊のT10・全スキル・消耗品4件・ツリー配分、開始時構成の保持と本人用／公開戦績APIの一致も確認しました。同じプロセスでの司令官変更→再受付→キャンセルは単独参加1条件で成功し、ゲーム側・サーバー側とも待機解除、モード一覧の再操作まで確認済みです。以前のPrivate経由のプロフィール不一致を解消した証明には含めません。
 
@@ -36,9 +36,9 @@ QA0.2.91ではPrivate選択の保存を修正しました。両ルールで通�
 
 ## English
 
-QA0.2.99 completed a normal Private Annihilation match on Alps without AFK for either player. Both returned to the original room and received their results. Six T10 units retained their starting skills, consumables and tree allocations, and self/public histories matched even after a commander change. After leaving the room normally, one solo public enqueue and cancellation passed without restarting. The refusal before leaving still needs clear on-screen recovery guidance. The earlier profile mismatch, an older undelivered result, expiry recovery and recovery after losing room context remain unaccepted.
+Signed QA0.2.103 is installed and has launched on both VMs. It addresses refusal-dialog visibility and an error when a completed participant returns to a Private lobby before the owner reopens it. The related suites passed 90 and 112 tests respectively on both Linux and Windows. An isolated real-client check confirmed automatic windowed guidance, normal OK and return to the same game; end-to-end matchmaking acceptance in QA0.2.103 is still pending. A normal QA0.2.102 round verified both saved histories and result deliveries, with all skills, consumables and tree allocations preserved for the six tested T10 unit slots and matching self/public APIs. The guest lobby return encountered a prepared-room error, then a separate expiry on retry. Full acceptance, production release and reopening remain pending.
 
-**Maintenance continues. New sign-ins and matchmaking remain paused, with no reopening date. Production has not been updated.** Both VMs run signed QA0.2.99 with the room-ownership fix installed on the QA server; the cloud QA distribution manifest remains a separate 0.2.63. The last successfully checked public stable launcher was 0.2.43; subsequent status requests returned HTTP 403 and need rechecking.
+**Maintenance continues. New sign-ins and matchmaking remain paused, with no reopening date. Production has not been updated.** Both VMs run signed QA0.2.103 with the room-ownership fix installed on the QA server; the cloud QA distribution manifest remains a separate 0.2.63. The last successfully checked public stable launcher was 0.2.43; subsequent status requests returned HTTP 403 and need rechecking.
 
 A new QA0.2.98 public Annihilation match on Oasis completed normally for both players, without AFK, including the result screens. Both clients agreed on all 20 final participant rows. Six T10 units retained complete skills, four consumables and tree allocations; frozen builds and self/public history APIs matched. One solo commander-change → requeue → cancel sequence also passed in the same process, with both queues idle and the mode menu usable afterward. This does not prove the earlier Private-to-public profile mismatch resolved.
 
@@ -68,9 +68,9 @@ Abnormal invitation cases and room expiry during combat still need acceptance. F
 
 ## Русский
 
-В QA0.2.99 оба игрока завершили обычный Private Annihilation на Alps без AFK, вернулись в прежнюю комнату и получили результаты. Навыки, расходники и распределение дерева шести отрядов T10 сохранились с начала боя; личная и публичная история совпали и не изменились после смены командира. После обычного выхода из комнаты одиночный вход в публичную очередь и отмена прошли без перезапуска. Отказ до выхода ещё требует понятной подсказки на экране. Прежнее несоответствие профиля, неполученный результат старого боя, восстановление после истечения срока и потери контекста комнаты остаются непроверенными.
+Подписанная QA0.2.103 установлена и запущена на обеих VM. Исправляются видимость подсказки при отказе и ошибка возврата завершившего бой участника в Private-лобби до его повторного открытия владельцем. Связанные наборы из 90 и 112 тестов прошли на Linux и Windows. Отдельная проверка на реальном клиенте подтвердила автоматический показ подсказки в оконном режиме, обычное нажатие OK и возврат в ту же игру; сквозная проверка подбора в QA0.2.103 ещё не завершена. Обычный бой QA0.2.102 подтвердил сохранение истории и получение результатов обоими игроками, все навыки, расходники и распределение дерева для шести проверенных слотов T10, а также совпадение личного и публичного API. Возврат гостя встретил ошибку подготовленной комнаты, а повторная попытка — отдельное истечение срока. Полная приёмка, публичный выпуск и возобновление входа остаются незавершёнными.
 
-**Техническое обслуживание продолжается. Новый вход и подбор матчей приостановлены; дата возобновления не назначена. Публичный выпуск не изменён.** Обе VM используют подписанный QA0.2.99; на QA-сервере установлено исправление записи владельца комнаты; облачный QA-манифест остаётся отдельной версией 0.2.63. Последняя успешно проверенная публичная стабильная версия — 0.2.43; последующие запросы состояния вернули HTTP 403 и требуют повторной проверки.
+**Техническое обслуживание продолжается. Новый вход и подбор матчей приостановлены; дата возобновления не назначена. Публичный выпуск не изменён.** Обе VM используют подписанный QA0.2.103; на QA-сервере установлено исправление записи владельца комнаты; облачный QA-манифест остаётся отдельной версией 0.2.63. Последняя успешно проверенная публичная стабильная версия — 0.2.43; последующие запросы состояния вернули HTTP 403 и требуют повторной проверки.
 
 Новый публичный бой Annihilation на Oasis в QA0.2.98 завершился обычно у обоих игроков, без AFK, с показом итоговых экранов. Все 20 строк участников совпали у обоих клиентов. Сохранены шесть отрядов T10 со всеми навыками, четыре расходника и распределение дерева; составы после старта не изменились, личный и публичный API совпали. Одна одиночная последовательность «смена командира → повторная очередь → отмена» прошла в том же процессе: обе очереди свободны, меню режимов снова работает. Это не доказывает устранение прежнего несоответствия профиля при переходе из Private.
 

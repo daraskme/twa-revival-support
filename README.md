@@ -15,7 +15,7 @@ TWA Revivalの公開問い合わせ窓口です。daraskが個人で開発・運
 
 ## 日本語
 
-QA0.2.99ではPrivate通常決着・両者の結果受信・構成を保持した戦績保存に加え、通常退出後の公開単独受付とキャンセルを再起動なしで確認しました。拒否時の画面案内と異常条件の検証は残っています。本番配信・受付再開はまだ行っていません。
+QA0.2.103を両VMへ署名付き適用し、起動を確認しました。受付拒否案内の表示と、対戦終了後に相手より先にPrivateロビーへ戻る際のエラーを修正しています。関連90件・112件は、それぞれLinux・Windowsで成功しました。ウィンドウ表示の案内は実機単体で自動表示・通常OK・復帰まで確認しましたが、QA0.2.103で実際のマッチングから通す確認は残っています。QA0.2.102の通常対戦では両者の戦績・結果受信と、代表6部隊のT10・全スキル・消耗品・ツリー配分の保存、本人用／公開APIの一致を確認しました。一方、ゲストのロビー復帰では準備済みエラーと、その後の期限切れを観測しました。全件受入・本番配信・受付再開は未完了です。
 
 QA0.2.98の公開殲滅戦Oasisで両者の通常決着・結果受信、全スキル・消耗品・ツリー配分と戦績保存、本人用／公開APIの一致を確認しました。同じ起動中の司令官変更→再受付→キャンセルも単独参加で成功しています。原因別ログを追加したQA0.2.99は両VMへ適用・起動確認済みです。Private経由のプロフィール不一致と期限切れ復帰の残条件、全件受入・本番配信・受付再開は未完了です。[検証状況](STATUS.md)。
 
@@ -34,7 +34,7 @@ QA0.2.98の公開殲滅戦Oasisで両者の通常決着・結果受信、全ス�
 
 ## English
 
-QA0.2.99 verified normal Private completion, both result deliveries and unchanged match loadouts, followed by a solo public enqueue and cancellation after leaving normally, without restarting. Refusal guidance and exceptional recovery cases remain open. Production release and reopening are still pending.
+Signed QA0.2.103 is installed and has launched on both VMs. It addresses refusal-dialog visibility and an error when a completed participant returns to a Private lobby before the owner reopens it. The related suites passed 90 and 112 tests respectively on both Linux and Windows. An isolated real-client check confirmed automatic windowed guidance, normal OK and return to the same game; end-to-end matchmaking acceptance in QA0.2.103 is still pending. A normal QA0.2.102 round verified both saved histories and result deliveries, with all skills, consumables and tree allocations preserved for the six tested T10 unit slots and matching self/public APIs. The guest lobby return encountered a prepared-room error, then a separate expiry on retry. Full acceptance, production release and reopening remain pending.
 
 QA0.2.98 completed a normal public Annihilation round on Oasis with both results delivered, complete skills/consumables/tree allocations preserved, and matching self/public histories. A solo commander change, requeue and cancellation also passed without restarting. Signed QA0.2.99 adds cause-specific diagnostics and has been installed and launched on both VMs. The earlier Private-to-public profile mismatch, remaining expiry recovery cases, full acceptance, production release and reopening remain pending. See [QA status](STATUS.md#english).
 
@@ -55,7 +55,7 @@ For account access, correction or deletion requests, initially say only that you
 
 ## Русский
 
-В QA0.2.99 подтверждены обычное завершение Private-боя, получение результатов обоими игроками и неизменность сохранённых составов. После обычного выхода публичная одиночная очередь и отмена прошли без перезапуска. Подсказки при отказе и нештатные сценарии восстановления ещё требуют работы. Публичный выпуск и возобновление входа не выполнены.
+Подписанная QA0.2.103 установлена и запущена на обеих VM. Исправляются видимость подсказки при отказе и ошибка возврата завершившего бой участника в Private-лобби до его повторного открытия владельцем. Связанные наборы из 90 и 112 тестов прошли на Linux и Windows. Отдельная проверка на реальном клиенте подтвердила автоматический показ подсказки в оконном режиме, обычное нажатие OK и возврат в ту же игру; сквозная проверка подбора в QA0.2.103 ещё не завершена. Обычный бой QA0.2.102 подтвердил сохранение истории и получение результатов обоими игроками, все навыки, расходники и распределение дерева для шести проверенных слотов T10, а также совпадение личного и публичного API. Возврат гостя встретил ошибку подготовленной комнаты, а повторная попытка — отдельное истечение срока. Полная приёмка, публичный выпуск и возобновление входа остаются незавершёнными.
 
 В QA0.2.98 обычный публичный бой Annihilation на Oasis завершился у обоих игроков: результаты получены, все навыки, расходники и распределение дерева сохранены, личная и публичная история совпали. Смена командира, повторный одиночный вход в очередь и отмена также прошли без перезапуска. Подписанная QA0.2.99 с уточнением причин ошибок установлена и запущена на обеих VM. Прежнее несоответствие профиля при переходе из Private, оставшиеся случаи возврата после истечения срока, полная приёмка, публичный выпуск и возобновление входа ещё не завершены. См. [состояние QA](STATUS.md#русский).
 
