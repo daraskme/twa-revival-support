@@ -15,7 +15,7 @@ TWA Revivalの公開問い合わせ窓口です。daraskが個人で開発・運
 
 ## 日本語
 
-2026-10-10のQAでは、復旧した5マップ定義の通常対戦と両者の戦績保存を確認しました。「Private拠点戦」「Private殲滅戦」の二つの入口も実装済みです。QA0.2.88では日本語・ロシア語それぞれの実画面で両ルールの作成・通常退出・切り替えを確認しました。未配信で、離席時の戦績など残る確認項目は[運用・更新状況](STATUS.md)に記載しています。
+2026-10-10のQAでは、復旧した5マップ定義の通常対戦と両者の戦績保存を確認しました。「Private拠点戦」「Private殲滅戦」の二つの入口も実装済みです。QA0.2.88では日本語・ロシア語それぞれの実画面で両ルールの作成・通常退出・切り替えを確認しました。QA0.2.89では殲滅戦のAFK記録、相手の正常完了、両者の再入室まで確認しました。未配信で、残る確認項目は[運用・更新状況](STATUS.md)に記載しています。
 
 不具合や遊び方についてIssuesから連絡できます。閲覧は誰でもできます。投稿にはGitHubアカウントが必要です。日本語・英語・ロシア語に対応しています。
 
@@ -32,7 +32,7 @@ TWA Revivalの公開問い合わせ窓口です。daraskが個人で開発・運
 
 ## English
 
-QA on 2026-10-10 confirmed normal matches and both players’ histories for five restored map definitions. Separate Private Territory and Private Annihilation entries are implemented. QA0.2.88 also verified both room types, normal exit, and rule switching in the live Japanese and Russian clients. These changes are unreleased; AFK results and other outstanding checks are listed in [service status](STATUS.md#english).
+QA on 2026-10-10 confirmed normal matches and both players’ histories for five restored map definitions. Separate Private Territory and Private Annihilation entries are implemented. QA0.2.88 also verified both room types, normal exit, and rule switching in the live Japanese and Russian clients. QA0.2.89 passed one live Annihilation AFK report, the other player’s normal finish, and both clients rejoining. These changes are unreleased; outstanding checks are listed in [service status](STATUS.md#english).
 
 **Maintenance: new sign-ins and matchmaking are paused. No reopening date is set.** See [current progress and remaining release checks](STATUS.md#english).
 
@@ -51,7 +51,7 @@ For account access, correction or deletion requests, initially say only that you
 
 ## Русский
 
-В QA от 2026-10-10 подтверждены обычные бои и история обоих игроков для пяти восстановленных определений карт. Реализованы отдельные пункты Private Territory и Private Annihilation. В QA0.2.88 также проверены создание обоих типов комнат, обычный выход и смена правил в работающем клиенте на японском и русском языках. Изменения ещё не выпущены; итоги после AFK и остальные проверки указаны в [состоянии сервиса](STATUS.md#русский).
+В QA от 2026-10-10 подтверждены обычные бои и история обоих игроков для пяти восстановленных определений карт. Реализованы отдельные пункты Private Territory и Private Annihilation. В QA0.2.88 также проверены создание обоих типов комнат, обычный выход и смена правил в работающем клиенте на японском и русском языках. В QA0.2.89 подтверждены AFK-запись в одном бою Annihilation, обычное завершение другим игроком и возврат обоих клиентов. Изменения ещё не выпущены; оставшиеся проверки указаны в [состоянии сервиса](STATUS.md#русский).
 
 **Техническое обслуживание: новый вход и подбор матчей приостановлены. Дата возобновления не назначена.** См. [ход работ и оставшиеся проверки](STATUS.md#русский).
 
