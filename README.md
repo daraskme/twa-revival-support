@@ -15,7 +15,7 @@ TWA Revivalの公開問い合わせ窓口です。daraskが個人で開発・運
 
 ## 日本語
 
-復旧5マップ定義、Private拠点戦／殲滅戦の二入口、通常対戦の戦績・使用構成保存、本陣占領の原本コードとの一致は確認済みです。 Private対戦後の公開マッチング失敗とモード選択不能は未解決です。診断修正はLinux・実Windows各35件を通過し、署名付きQA0.2.94を両VMへ適用しました。再起動直後の公開殲滅戦は受付・入場に成功。実際の通信断中に自主退出した記録がPC内に残り、接続復旧後に同じイベントとして再送され、本人用／公開戦績へ反映されることを確認しました。続いて相手が全滅後の観測中にAFKとなり、双方の退出理由と全6部隊のスキル・消耗品・ツリー配分が保持されました。この試合は通常決着の受入には含めません。再起動後の再送と残る条件は未完了です。 本番配信と受付再開はまだです。[検証状況](STATUS.md)。
+復旧5マップ定義、Private拠点戦／殲滅戦の分離、代表構成の戦績保存を確認済みです。QA0.2.97では司令官変更後も全スキル・消耗品・ツリー配分を保存し、通常決着後の本人用／公開戦績まで一致しました。部屋の期限後に結果受け取りが残る別の問題を発見し、修正をQAサーバーへ反映しましたが、実機受入は残っています。全件受入・本番配信・受付再開はまだです。[検証状況](STATUS.md)。
 
 不具合や遊び方についてIssuesから連絡できます。閲覧は誰でもできます。投稿にはGitHubアカウントが必要です。日本語・英語・ロシア語に対応しています。
 
@@ -32,7 +32,7 @@ TWA Revivalの公開問い合わせ窓口です。daraskが個人で開発・運
 
 ## English
 
-QA has confirmed five restored map definitions, separate Private Territory/Annihilation entries, recorded normal-match histories/builds and agreement with the original capture code. Public matchmaking failure and a locked mode selector after a Private match remain unresolved. The diagnostic fix passed 35 Linux and 35 actual Windows tests, and signed QA0.2.94 is installed in both VMs. Freshly restarted clients successfully entered public Annihilation. A voluntary exit during a real network outage persisted locally and was retried as the same event after connectivity returned, with matching self/public history. The peer later became AFK during observation after losing all units; both departure reasons and all six units’ skills, consumables and tree allocations were preserved. This trial does not count as ordinary match completion. Retry after restarting and other conditions remain open. Production and admission remain unchanged. See [QA status](STATUS.md#english).
+QA has confirmed five restored map definitions, separate Private Territory/Annihilation entries and representative match/build histories. QA0.2.97 preserved complete skills, consumables and tree allocations after a commander change through normal completion, with matching self/public histories. A separate result-delivery problem after room expiry was found; its fix is installed on the QA server, with live acceptance pending. Full acceptance, production release and reopening remain pending. See [QA status](STATUS.md#english).
 
 **Maintenance: new sign-ins and matchmaking are paused. No reopening date is set.** See [current progress and remaining release checks](STATUS.md#english).
 
@@ -51,7 +51,7 @@ For account access, correction or deletion requests, initially say only that you
 
 ## Русский
 
-В QA проверены пять восстановленных определений карт, отдельные пункты Private Territory/Annihilation, история и составы обычных боёв и совпадение с исходным кодом захвата. Сбой публичного подбора и блокировка выбора режима после Private-боя остаются нерешёнными. Исправление диагностики прошло по 35 тестов в Linux и реальной Windows; подписанная QA0.2.94 установлена в обе VM. После перезапуска клиенты успешно вошли в публичный Annihilation. Выход во время реального обрыва сети сохранился локально и после восстановления связи был отправлен повторно как то же событие; личная и публичная история совпали. Позже соперник получил AFK во время наблюдения после потери всех отрядов. Обе причины выхода, навыки, расходники и распределение дерева всех шести отрядов сохранились. Этот бой не считается проверкой обычного завершения. Повторная отправка после перезапуска и другие условия ещё не проверены. Публичный выпуск и приём игроков не изменены. См. [состояние QA](STATUS.md#русский).
+В QA проверены пять восстановленных определений карт, отдельные пункты Private Territory/Annihilation и история боёв с выбранными составами. QA0.2.97 сохранила все навыки, расходники и распределение дерева после смены командира до обычного завершения; личная и публичная история совпали. Обнаружена отдельная проблема получения результатов после истечения срока комнаты. Исправление установлено на QA-сервере, проверка на реальных клиентах остаётся. Полная приёмка, публичный выпуск и возобновление входа ещё не завершены. См. [состояние QA](STATUS.md#русский).
 
 **Техническое обслуживание: новый вход и подбор матчей приостановлены. Дата возобновления не назначена.** См. [ход работ и оставшиеся проверки](STATUS.md#русский).
 

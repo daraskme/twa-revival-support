@@ -1,12 +1,16 @@
 # Service and update status / 運用・更新状況 / Состояние сервиса
 
-Updated: **2026-10-10 21:43 JST**. [Project](https://darask.me/twa/) · [Support](README.md) · [Launcher source](https://github.com/daraskme/twa-revival-launcher) · [Server source](https://github.com/daraskme/twa-revival-server)
+Updated: **2026-10-10 23:57 JST**. [Project](https://darask.me/twa/) · [Support](README.md) · [Launcher source](https://github.com/daraskme/twa-revival-launcher) · [Server source](https://github.com/daraskme/twa-revival-server)
 
 ## 日本語
 
-**メンテナンス継続中です。新規ログイン・マッチングの再開日は未定で、本番配信はまだ変更していません。** 現在の検証版はQA0.2.94です。クラウドのQA配布マニフェスト0.2.63とは別に、両VMへ署名済み候補を適用しています。最後に正常取得できた公開安定版は0.2.43で、その後の公開状態照会はHTTP 403のため再確認が必要です。
+**メンテナンス継続中です。新規ログイン・マッチングの再開日は未定で、本番配信はまだ変更していません。** 現在のクライアント検証版はQA0.2.97、QAサーバーは部屋所有情報の修正を反映済みです。クラウドのQA配布マニフェスト0.2.63とは別に、両VMへ署名済み候補を適用しています。最後に正常取得できた公開安定版は0.2.43で、その後の公開状態照会はHTTP 403のため再確認が必要です。
 
-Private対戦後の公開マッチング失敗とモード選択不能は未解決です。診断修正はLinux・実Windows各35件を通過し、署名付きQA0.2.94を両VMへ適用しました。再起動直後の公開殲滅戦は受付・入場に成功。実際の通信断中に自主退出した記録がPC内に残り、接続復旧後に同じイベントとして再送され、本人用／公開戦績へ反映されることを確認しました。続いて相手が全滅後の観測中にAFKとなり、双方の退出理由と全6部隊のスキル・消耗品・ツリー配分が保持されました。この試合は通常決着の受入には含めません。再起動後の再送と残る条件は未完了です。
+QA0.2.97では、司令官変更後にスキル記録が欠ける原因を修正しました。関連Linux50件・Windows54件に成功し、片方で司令官を変更した後、両VMでPrivate殲滅戦を通常完走。両者の勝敗、非AFK、6部隊のT10・全スキル・消耗品・ツリー配分、開始時からの構成保持、本人用／公開戦績の一致を確認しました。QA0.2.96のマッチング失敗後のモード選択復旧も、単独参加の初回と再試行で確認済みです。多人数の各役割と、別途発生した公開受付のプロフィール不一致は未受入です。
+
+終了後の復帰で、元の部屋が試合のため保持されている間に主催者の管理情報だけが期限切れとなり、別の部屋を作れてしまう不具合を発見しました。両者の戦績は保存済みですが、この試合の結果受け取りは未完了です。部屋本体の状態確認と同時作成対策の修正は関連52件・型検査に成功し、QAサーバーへ反映しました。期限をまたいだ復帰の実機受入は残ります。
+
+QA0.2.94で確認した公開殲滅戦の通信断中の自主退出保存と、接続復旧後の同一イベント再送は引き続き確認済みです。その試合は相手がAFKとなったため通常決着の受入には含めません。再起動後の再送と残る条件は未完了です。
 
 今回復旧した5マップ定義は、長坂の拠点戦、ミュカレとヴェスヴィウスの両ルールです。いずれも通常の2人対戦、両者の最終戦績、全6部隊の使用構成、本人用と公開APIの一致、同室への復帰までQAで確認済みです。候補には16地形×2ルールを収録しています。
 
@@ -24,9 +28,13 @@ QA0.2.91ではPrivate選択の保存を修正しました。両ルールで通�
 
 ## English
 
-**Maintenance continues. New sign-ins and matchmaking remain paused, with no reopening date. Production has not been updated.** Both VMs run signed QA0.2.94; the cloud QA distribution manifest remains a separate 0.2.63. The last successfully checked public stable launcher was 0.2.43; subsequent status requests returned HTTP 403 and need rechecking.
+**Maintenance continues. New sign-ins and matchmaking remain paused, with no reopening date. Production has not been updated.** Both VMs run signed QA0.2.97 with the room-ownership fix installed on the QA server; the cloud QA distribution manifest remains a separate 0.2.63. The last successfully checked public stable launcher was 0.2.43; subsequent status requests returned HTTP 403 and need rechecking.
 
-Public matchmaking failure and a locked mode selector after a Private match remain unresolved. The diagnostic fix passed 35 Linux and 35 actual Windows tests, and signed QA0.2.94 is installed in both VMs. Freshly restarted clients successfully entered public Annihilation. A voluntary exit during a real network outage persisted locally and was retried as the same event after connectivity returned, with matching self/public history. The peer later became AFK during observation after losing all units; both departure reasons and all six units’ skills, consumables and tree allocations were preserved. This trial does not count as ordinary match completion. Retry after restarting and other conditions remain open.
+QA0.2.97 fixes missing skill capture after a commander selection change. Related coverage passed 50 Linux and 54 Windows tests. Both VMs then completed a normal Private Annihilation match after an actual commander change: matching win/loss results, neither participant AFK, six T10 units with complete skills, consumables and tree allocations, unchanged frozen builds, and matching self/public histories. QA0.2.96 mode-selector recovery after failed matchmaking also passed an initial solo attempt and a retry. Other party roles and the separate public-entry profile mismatch remain unaccepted.
+
+Post-match recovery exposed another defect: an ownership index expired while the original room still retained its bound battle, allowing a replacement room. Both final histories are stored, but result delivery for this trial remains incomplete. The authoritative-room check and concurrent-creation guard passed 52 related tests and type checking, and are now installed on the QA server. Live acceptance of recovery across expiry remains pending.
+
+The QA0.2.94 public Annihilation trial still proves local storage of a voluntary exit during a real network outage and retry of the same event after connectivity returned. The peer became AFK, so that trial does not prove ordinary completion. Restart retries and other conditions remain open.
 
 Five restored map definitions—Changban Territory and both rulesets for Mycale and Vesuvius—passed normal two-player matches, both final histories, six complete loadouts, matching self/public APIs, and return to the same room. The candidate contains 16 terrains with two rulesets each.
 
@@ -44,9 +52,13 @@ Abnormal invitation cases and room expiry during combat still need acceptance. F
 
 ## Русский
 
-**Техническое обслуживание продолжается. Новый вход и подбор матчей приостановлены; дата возобновления не назначена. Публичный выпуск не изменён.** Обе VM используют подписанный QA0.2.94; облачный QA-манифест остаётся отдельной версией 0.2.63. Последняя успешно проверенная публичная стабильная версия — 0.2.43; последующие запросы состояния вернули HTTP 403 и требуют повторной проверки.
+**Техническое обслуживание продолжается. Новый вход и подбор матчей приостановлены; дата возобновления не назначена. Публичный выпуск не изменён.** Обе VM используют подписанный QA0.2.97; на QA-сервере установлено исправление записи владельца комнаты; облачный QA-манифест остаётся отдельной версией 0.2.63. Последняя успешно проверенная публичная стабильная версия — 0.2.43; последующие запросы состояния вернули HTTP 403 и требуют повторной проверки.
 
-Сбой публичного подбора и блокировка выбора режима после Private-боя остаются нерешёнными. Исправление диагностики прошло по 35 тестов в Linux и реальной Windows; подписанная QA0.2.94 установлена в обе VM. После перезапуска клиенты успешно вошли в публичный Annihilation. Выход во время реального обрыва сети сохранился локально и после восстановления связи был отправлен повторно как то же событие; личная и публичная история совпали. Позже соперник получил AFK во время наблюдения после потери всех отрядов. Обе причины выхода, навыки, расходники и распределение дерева всех шести отрядов сохранились. Этот бой не считается проверкой обычного завершения. Повторная отправка после перезапуска и другие условия ещё не проверены.
+QA0.2.97 исправляет потерю записи навыков после смены командира. Пройдены 50 тестов Linux и 54 Windows. После реальной смены командира обе VM завершили обычный бой Private Annihilation: победа и поражение согласованы, оба игрока без AFK, сохранены шесть отрядов T10 со всеми навыками, расходниками и распределением дерева. Составы не изменились после старта, личная и публичная история совпали. В QA0.2.96 восстановление выбора режима после ошибки подбора проверено при первом одиночном входе и повторной попытке. Остальные роли группы и отдельное несоответствие профиля при публичном входе ещё не приняты.
+
+При возврате обнаружена другая ошибка: запись владельца истекала, хотя исходная комната ещё удерживала связанный бой, и позволяла создать новую комнату. Итоговая история обоих игроков сохранена, но получение результатов этого боя не завершено. Проверка состояния исходной комнаты и защита от одновременного создания прошли 52 связанных теста и проверку типов; исправление установлено на QA-сервере. Проверка возврата после истечения срока на реальных клиентах остаётся.
+
+Проверка публичного Annihilation в QA0.2.94 подтверждает локальное сохранение добровольного выхода при реальном обрыве сети и повторную отправку того же события после восстановления связи. Соперник получил AFK, поэтому тот бой не считается обычным завершением. Отправка после перезапуска и другие условия ещё не проверены.
 
 Пять восстановленных определений карт — Changban Territory и оба режима Mycale и Vesuvius — прошли обычные бои двух игроков: подтверждены оба итога, составы шести отрядов, совпадение личного и публичного API и возврат в ту же комнату. Кандидат содержит 16 ландшафтов с двумя режимами каждый.
 
