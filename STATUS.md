@@ -1,8 +1,10 @@
 # Service and update status / 運用・更新状況 / Состояние сервиса
 
-Updated: **2026-10-11 01:23 JST**. [Project](https://darask.me/twa/) · [Support](README.md) · [Launcher source](https://github.com/daraskme/twa-revival-launcher) · [Server source](https://github.com/daraskme/twa-revival-server)
+Updated: **2026-10-11 01:56 JST**. [Project](https://darask.me/twa/) · [Support](README.md) · [Launcher source](https://github.com/daraskme/twa-revival-launcher) · [Server source](https://github.com/daraskme/twa-revival-server)
 
 ## 日本語
+
+QA0.2.99のPrivate殲滅戦Alpsで、両者の離席なし通常決着、同じ部屋への復帰と結果受信を確認しました。6部隊のT10・全スキル・消耗品・ツリー配分は開始時から不変で、本人用／公開戦績APIも一致しています。試合後の司令官変更も過去の戦績を変えません。通常退出後の公開単独受付とキャンセルは、同じ起動中に成功しました。退出前の受付拒否には画面上の説明改善が必要です。以前のプロフィール不一致、旧試合の未受信、期限切れや部屋情報消失からの復旧は引き続き未受入です。
 
 **メンテナンス継続中です。新規ログイン・マッチングの再開日は未定で、本番配信はまだ変更していません。** 現在のクライアント検証版はQA0.2.99、QAサーバーは部屋所有情報の修正を反映済みです。クラウドのQA配布マニフェスト0.2.63とは別に、両VMへ署名済み候補を適用しています。最後に正常取得できた公開安定版は0.2.43で、その後の公開状態照会はHTTP 403のため再確認が必要です。
 
@@ -34,6 +36,8 @@ QA0.2.91ではPrivate選択の保存を修正しました。両ルールで通�
 
 ## English
 
+QA0.2.99 completed a normal Private Annihilation match on Alps without AFK for either player. Both returned to the original room and received their results. Six T10 units retained their starting skills, consumables and tree allocations, and self/public histories matched even after a commander change. After leaving the room normally, one solo public enqueue and cancellation passed without restarting. The refusal before leaving still needs clear on-screen recovery guidance. The earlier profile mismatch, an older undelivered result, expiry recovery and recovery after losing room context remain unaccepted.
+
 **Maintenance continues. New sign-ins and matchmaking remain paused, with no reopening date. Production has not been updated.** Both VMs run signed QA0.2.99 with the room-ownership fix installed on the QA server; the cloud QA distribution manifest remains a separate 0.2.63. The last successfully checked public stable launcher was 0.2.43; subsequent status requests returned HTTP 403 and need rechecking.
 
 A new QA0.2.98 public Annihilation match on Oasis completed normally for both players, without AFK, including the result screens. Both clients agreed on all 20 final participant rows. Six T10 units retained complete skills, four consumables and tree allocations; frozen builds and self/public history APIs matched. One solo commander-change → requeue → cancel sequence also passed in the same process, with both queues idle and the mode menu usable afterward. This does not prove the earlier Private-to-public profile mismatch resolved.
@@ -63,6 +67,8 @@ Territory uses 3500 points and Chinese-original capture settings in QA. Ordinary
 Abnormal invitation cases and room expiry during combat still need acceptance. Full acceptance and release remain unfinished: all unit abilities, three/four-player parties, remaining disconnect/cancel/reconnect cases, long sessions, bans/kicks, full statistics, update/OS/launcher crash recovery, load, physical-PC reboot and requested features such as replays. A short TCP interruption recovered in about 0.43 seconds with combat continuing. GPU QA uses RTX5060 Ti; PRO6000 is not in use.
 
 ## Русский
+
+В QA0.2.99 оба игрока завершили обычный Private Annihilation на Alps без AFK, вернулись в прежнюю комнату и получили результаты. Навыки, расходники и распределение дерева шести отрядов T10 сохранились с начала боя; личная и публичная история совпали и не изменились после смены командира. После обычного выхода из комнаты одиночный вход в публичную очередь и отмена прошли без перезапуска. Отказ до выхода ещё требует понятной подсказки на экране. Прежнее несоответствие профиля, неполученный результат старого боя, восстановление после истечения срока и потери контекста комнаты остаются непроверенными.
 
 **Техническое обслуживание продолжается. Новый вход и подбор матчей приостановлены; дата возобновления не назначена. Публичный выпуск не изменён.** Обе VM используют подписанный QA0.2.99; на QA-сервере установлено исправление записи владельца комнаты; облачный QA-манифест остаётся отдельной версией 0.2.63. Последняя успешно проверенная публичная стабильная версия — 0.2.43; последующие запросы состояния вернули HTTP 403 и требуют повторной проверки.
 

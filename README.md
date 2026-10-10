@@ -15,6 +15,8 @@ TWA Revivalの公開問い合わせ窓口です。daraskが個人で開発・運
 
 ## 日本語
 
+QA0.2.99ではPrivate通常決着・両者の結果受信・構成を保持した戦績保存に加え、通常退出後の公開単独受付とキャンセルを再起動なしで確認しました。拒否時の画面案内と異常条件の検証は残っています。本番配信・受付再開はまだ行っていません。
+
 QA0.2.98の公開殲滅戦Oasisで両者の通常決着・結果受信、全スキル・消耗品・ツリー配分と戦績保存、本人用／公開APIの一致を確認しました。同じ起動中の司令官変更→再受付→キャンセルも単独参加で成功しています。原因別ログを追加したQA0.2.99は両VMへ適用・起動確認済みです。Private経由のプロフィール不一致と期限切れ復帰の残条件、全件受入・本番配信・受付再開は未完了です。[検証状況](STATUS.md)。
 
 不具合や遊び方についてIssuesから連絡できます。閲覧は誰でもできます。投稿にはGitHubアカウントが必要です。日本語・英語・ロシア語に対応しています。
@@ -31,6 +33,8 @@ QA0.2.98の公開殲滅戦Oasisで両者の通常決着・結果受信、全ス�
 アカウント情報の確認・修正・削除は、最初に「アカウントについて相談したい」とだけ記載してください。運営が本人確認と対応範囲を案内します。公開投稿やプレイヤーネームだけで本人確認は完了しません。Epicアカウント自体の削除は扱いません。
 
 ## English
+
+QA0.2.99 verified normal Private completion, both result deliveries and unchanged match loadouts, followed by a solo public enqueue and cancellation after leaving normally, without restarting. Refusal guidance and exceptional recovery cases remain open. Production release and reopening are still pending.
 
 QA0.2.98 completed a normal public Annihilation round on Oasis with both results delivered, complete skills/consumables/tree allocations preserved, and matching self/public histories. A solo commander change, requeue and cancellation also passed without restarting. Signed QA0.2.99 adds cause-specific diagnostics and has been installed and launched on both VMs. The earlier Private-to-public profile mismatch, remaining expiry recovery cases, full acceptance, production release and reopening remain pending. See [QA status](STATUS.md#english).
 
@@ -50,6 +54,8 @@ Open an issue for a bug report or gameplay question. A GitHub account is require
 For account access, correction or deletion requests, initially say only that you need account support. The operator will explain identity verification and the scope of the request. A public post or player name alone does not verify ownership. We cannot delete your Epic account.
 
 ## Русский
+
+В QA0.2.99 подтверждены обычное завершение Private-боя, получение результатов обоими игроками и неизменность сохранённых составов. После обычного выхода публичная одиночная очередь и отмена прошли без перезапуска. Подсказки при отказе и нештатные сценарии восстановления ещё требуют работы. Публичный выпуск и возобновление входа не выполнены.
 
 В QA0.2.98 обычный публичный бой Annihilation на Oasis завершился у обоих игроков: результаты получены, все навыки, расходники и распределение дерева сохранены, личная и публичная история совпали. Смена командира, повторный одиночный вход в очередь и отмена также прошли без перезапуска. Подписанная QA0.2.99 с уточнением причин ошибок установлена и запущена на обеих VM. Прежнее несоответствие профиля при переходе из Private, оставшиеся случаи возврата после истечения срока, полная приёмка, публичный выпуск и возобновление входа ещё не завершены. См. [состояние QA](STATUS.md#русский).
 
